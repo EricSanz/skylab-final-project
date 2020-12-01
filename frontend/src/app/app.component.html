@@ -1,52 +1,88 @@
-<mat-drawer-container>
-	<mat-drawer #snav position='start' [mode]="mobileQuery.matches ? 'over' : 'side'" [opened]="!mobileQuery.matches"
-        [ngClass]="{'sidenav-collapsed': collapsedNav && !mobileQuery.matches}">
-        <div class="sidenav-fixed">
-            <div class="sidenav-header">
-                <span>Press Start</span>
-            </div>
-            <ul>
-                <li>
-                    <mat-icon>home</mat-icon>
-                </li>
-                <li>
-                    <mat-icon>games</mat-icon>
-                    <!-- <img src="https://cdn.iconscout.com/icon/free/png-256/playstation-32-555277.png"> -->
-                </li>
-                <li>
-                    <mat-icon (click)="mobileQuery.matches ? snav.toggle() : collapsedNav = !collapsedNav">exit_to_app
-                    </mat-icon>
-                </li>
-            </ul>
-        </div>
-    </mat-drawer>
-	<mat-drawer-content [ngClass]="{'sidenav-collapsed': collapsedNav && !mobileQuery.matches}">
-        <div class="header">
-            <div class="header-container">
-                <div class="header-left">
-                    <button class="header-btn" (click)="mobileQuery.matches ? snav.toggle() : collapsedNav = !collapsedNav">
-                        <mat-icon>menu</mat-icon>
-                        <p>Menu</p>
-                    </button>
-                    <button class="header-btn">
-                        <mat-icon>today</mat-icon>
-                        <p>New Releases</p>
-                    </button>
-                </div>
-                <div class="header-center">
-                    <p>Press Start Logo</p>
-                </div>
-                <div class="header-right">
-                    <button class="header-btn">
-                        <mat-icon>account_circle</mat-icon>
-                        <p>Log in</p>
-                    </button>
-                    <button class="header-btn">
-                        <mat-icon>shopping_cart</mat-icon>
-                        <p>Cart</p>
-                    </button>
-                </div>
-            </div>
-        </div>
+<mat-toolbar class="main header">
+    <div class="header__left">
+        <mat-icon class="header-icon__left" *ngIf="!drawer.opened" (click)="drawer.toggle()">menu</mat-icon>
+        <mat-icon class="header-icon__left" *ngIf="drawer.opened" (click)="drawer.toggle()">exit_to_app</mat-icon>
+        <mat-icon>today</mat-icon>
+    </div>
+    <div>Press Start Logo</div>
+    <div class="header__right">
+        <mat-icon>account_circle</mat-icon>
+        <mat-icon class="header-icon__right">shopping_cart</mat-icon>
+    </div>
+</mat-toolbar>
+
+<mat-drawer-container [class.drawer-opened]="drawer.opened" class="example-container">
+	<mat-drawer #drawer class="drawer" mode="over" opened="false">
+		<ul>
+            <li>
+                <mat-icon>home</mat-icon>
+            </li>
+            <li>
+                <mat-icon>games</mat-icon>
+            </li>
+        </ul>
+	</mat-drawer>
+	<mat-drawer-content>
+
+		<div class="main contents">
+			drawer opened: {{drawer.opened}}
+			<div>Contents xxxxxx xxxxxx xxxxxx xxxxxx xxxxxx xxxxxx xxxxxx xxxxxx xxxxxx xxxxxxx xxxxxx xxxxxx</div>
+			<div style="height: 1000px">&nbsp;</div>
+		</div>
+		<mat-toolbar class="main footer">
+			Footer
+		</mat-toolbar>
 	</mat-drawer-content>
+
 </mat-drawer-container>
+
+<!-- <mat-toolbar class="main header">
+    <div class="header-container">
+        <div class="header-left">
+            <button class="header-btn" *ngIf="!drawer.opened" (click)="rsidenav.toggle()">
+                <mat-icon>menu</mat-icon>
+                <p>Menu</p>
+            </button>
+            <button class="header-btn" *ngIf="drawer.opened" (click)="rsidenav.toggle()">
+                <mat-icon>exit_to_app</mat-icon>
+                <button>Close</button>
+            </button>
+            <button class="header-btn">
+                <mat-icon>today</mat-icon>
+                <p>New Releases</p>
+            </button>
+        </div>
+        <div class="header-center">
+            <p>Press Start Logo</p>
+        </div>
+        <div class="header-right">
+            <button class="header-btn">
+                <mat-icon>account_circle</mat-icon>
+                <p>Log in</p>
+            </button>
+            <button class="header-btn">
+                <mat-icon>shopping_cart</mat-icon>
+                <p>Cart</p>
+            </button>
+        </div>
+    </div>
+</mat-toolbar>
+
+<mat-drawer-container [class.rsidenav-opened]="drawer-opened" >
+	<mat-drawer #rsidenav class="rsidenav" position='start' [mode]='over' [opened]='false'>
+        <ul>
+            <li>
+                <mat-icon>home</mat-icon>
+            </li>
+            <li>
+                <mat-icon>games</mat-icon>
+            </li>
+        </ul>
+    </mat-drawer>
+	<mat-drawer-content>
+        <router-outlet></router-outlet>
+        <mat-toolbar class="main footer">
+			Footer
+		</mat-toolbar>
+	</mat-drawer-content>
+</mat-drawer-container> -->
