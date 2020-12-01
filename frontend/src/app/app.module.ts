@@ -4,7 +4,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { IvyCarouselModule } from 'angular-responsive-carousel';
-
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatCardModule } from '@angular/material/card';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -26,6 +27,8 @@ import { CarouselComponent } from './carousel/carousel.component';
     MatIconModule,
     MatSidenavModule,
     MatListModule,
+    MatToolbarModule,
+    MatCardModule,
     IvyCarouselModule,
   ],
   providers: [],
