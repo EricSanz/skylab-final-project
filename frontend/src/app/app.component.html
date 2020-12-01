@@ -1,1 +1,52 @@
-<app-header></app-header>
+<mat-drawer-container>
+	<mat-drawer #snav position='start' [mode]="mobileQuery.matches ? 'over' : 'side'" [opened]="!mobileQuery.matches"
+        [ngClass]="{'sidenav-collapsed': collapsedNav && !mobileQuery.matches}">
+        <div class="sidenav-fixed">
+            <div class="sidenav-header">
+                <span>Press Start</span>
+            </div>
+            <ul>
+                <li>
+                    <mat-icon>home</mat-icon>
+                </li>
+                <li>
+                    <mat-icon>games</mat-icon>
+                    <!-- <img src="https://cdn.iconscout.com/icon/free/png-256/playstation-32-555277.png"> -->
+                </li>
+                <li>
+                    <mat-icon (click)="mobileQuery.matches ? snav.toggle() : collapsedNav = !collapsedNav">exit_to_app
+                    </mat-icon>
+                </li>
+            </ul>
+        </div>
+    </mat-drawer>
+	<mat-drawer-content [ngClass]="{'sidenav-collapsed': collapsedNav && !mobileQuery.matches}">
+        <div class="header">
+            <div class="header-container">
+                <div class="header-left">
+                    <button class="header-btn" (click)="mobileQuery.matches ? snav.toggle() : collapsedNav = !collapsedNav">
+                        <mat-icon>menu</mat-icon>
+                        <p>Menu</p>
+                    </button>
+                    <button class="header-btn">
+                        <mat-icon>today</mat-icon>
+                        <p>New Releases</p>
+                    </button>
+                </div>
+                <div class="header-center">
+                    <p>Press Start Logo</p>
+                </div>
+                <div class="header-right">
+                    <button class="header-btn">
+                        <mat-icon>account_circle</mat-icon>
+                        <p>Log in</p>
+                    </button>
+                    <button class="header-btn">
+                        <mat-icon>shopping_cart</mat-icon>
+                        <p>Cart</p>
+                    </button>
+                </div>
+            </div>
+        </div>
+	</mat-drawer-content>
+</mat-drawer-container>

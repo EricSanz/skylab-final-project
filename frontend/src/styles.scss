@@ -1,4 +1,104 @@
-/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+html,
+body {
+  height: 200%;
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 
-html, body { height: 200%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; box-sizing: border-box;}
+mat-drawer-container {
+  height: 100%;
+}
+
+mat-drawer,
+mat-drawer-content {
+  transition-duration: 0.4s;
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+mat-drawer {
+  background-color: #23283b;
+//   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg stroke='%2373adff' stroke-width='100' stroke-opacity='0' %3E%3Ccircle fill='%238ca5ff' cx='0' cy='0' r='1800'/%3E%3Ccircle fill='%23859cf2' cx='0' cy='0' r='1700'/%3E%3Ccircle fill='%237e93e5' cx='0' cy='0' r='1600'/%3E%3Ccircle fill='%23768ad8' cx='0' cy='0' r='1500'/%3E%3Ccircle fill='%236f81cb' cx='0' cy='0' r='1400'/%3E%3Ccircle fill='%236879bf' cx='0' cy='0' r='1300'/%3E%3Ccircle fill='%236170b2' cx='0' cy='0' r='1200'/%3E%3Ccircle fill='%235a67a5' cx='0' cy='0' r='1100'/%3E%3Ccircle fill='%23535e98' cx='0' cy='0' r='1000'/%3E%3Ccircle fill='%234b558b' cx='0' cy='0' r='900'/%3E%3Ccircle fill='%23444c7e' cx='0' cy='0' r='800'/%3E%3Ccircle fill='%233d4371' cx='0' cy='0' r='700'/%3E%3Ccircle fill='%23363a64' cx='0' cy='0' r='600'/%3E%3Ccircle fill='%232f3258' cx='0' cy='0' r='500'/%3E%3Ccircle fill='%2328294b' cx='0' cy='0' r='400'/%3E%3Ccircle fill='%2320203e' cx='0' cy='0' r='300'/%3E%3Ccircle fill='%23191731' cx='0' cy='0' r='200'/%3E%3Ccircle fill='%23120e24' cx='0' cy='0' r='100'/%3E%3C/g%3E%3C/svg%3E");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  transition-property: width;
+  &.sidenav-collapsed {
+    width: 0px;
+  }
+  .sidenav-fixed {
+    position: fixed;
+    width: 250px;
+}
+  .sidenav-header {
+    background-color: #111111;
+    height: 70px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    span {
+      font-size: 2em;
+      color: #ffffff;
+    }
+  }
+  ul {
+    padding: 0;
+    li {
+      display: grid;
+      justify-content: center;
+      align-items: center;
+      color: #ffffff;
+      list-style: none;
+      cursor: pointer;
+      margin: 10px;
+      padding: 10px;
+      background-color: #500c26;
+      border-radius: 5px;
+      img {
+        height: 20px;
+        color: #ffffff;
+      }
+    }
+  }
+}
+
+mat-drawer-content {
+  transition-property: transform, margin-left, margin-right;
+  &.sidenav-collapsed {
+    // margin-left: 100px !important;
+    margin-left: 0px !important;
+  }
+  .header {
+    border: none;
+    position: fixed;
+    height: 70px;
+    width: 100%;
+    background: #111111;
+    .header-container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding-top: 10px;
+        .header-btn {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            outline: none;
+            border: none;
+            background: none;
+            color: #ffffff;
+            cursor: pointer;
+            margin-left: 20px;
+            mat-icon {
+                font-size: 30px;
+            }
+            p{
+                margin-top: 5px;
+                font-size: 15px;
+            }
+        }
+    }  
+    }
+}
+
