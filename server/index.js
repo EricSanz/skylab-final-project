@@ -5,8 +5,8 @@ const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const { connect } = require('mongoose');
-const Videogame = require('');
-const videogameRouter = require('');
+const Videogame = require('./src/models/videogameModel');
+const videogameRouter = require('')(Videogame);
 
 const app = express();
 const port = process.env.PORT || 1728;
