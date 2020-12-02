@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Category } from './category';
+import { categories } from './categories';
 
 @Component({
   selector: 'app-left-sidenav',
@@ -7,15 +7,17 @@ import { Category } from './category';
   styleUrls: ['./left-sidenav.component.scss'],
 })
 export class LeftSidenavComponent {
-  categories: Category[];
+  categories = categories;
 
   openLeftSidenav(): any {
     const openButton = <HTMLDivElement>document.getElementById('toogleLeftSideNav');
-    openButton.style.transform = 'translateX(0px)';
+    openButton.style.transform = 'translateX(400px)';
   }
 
   closeLeftSidenav(): any {
     const closeButton = <HTMLDivElement>document.getElementById('toogleLeftSideNav');
-    closeButton.style.transform = 'translateX(-400px)';
+    const changeIconClose = <HTMLDivElement>document.getElementById('openButton');
+    closeButton.style.transform = 'translateX(0px)';
+    changeIconClose.style.display = 'block';
   }
 }

@@ -14,7 +14,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { CarouselComponent } from './carousel/carousel.component';
 import { HeaderComponent } from './header/header.component';
-import { LeftSidenavComponent } from './header/left-sidenav/left-sidenav.component';
+import { LeftSidenavComponent } from './left-sidenav/left-sidenav.component';
 
 @NgModule({
   declarations: [

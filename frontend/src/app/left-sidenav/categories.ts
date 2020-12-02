@@ -1,44 +1,42 @@
-import { Category } from './category';
-
-export const CATEGORIES: Category[] = [
+export const categories: Array<any> = [
   {
     category: 'Home',
-    route: '/',
+    route: '',
   },
   {
     category: 'Calendar',
-    route: '/calendar',
+    route: 'calendar',
   },
   {
     category: 'New Releases',
-    route: '/new',
+    route: 'new',
   },
   {
     category: 'Coming Soon',
-    route: '/comingsoon',
+    route: 'comingsoon',
   },
   {
     category: 'Sales',
-    route: '/sales',
+    route: 'sales',
   },
   {
     category: 'PlayStation',
-    route: '/playstation',
+    route: 'playstation',
   },
   {
     category: 'Xbox',
-    route: '/xbox',
+    route: 'xbox',
   },
   {
     category: 'Nintendo',
-    route: '/nintendo',
+    route: 'nintendo',
   },
   {
     category: 'Merchandising',
-    route: '/merchandising',
+    route: 'merchandising',
   },
   {
     category: 'Accesories',
-    route: '/accesories',
+    route: 'accesories',
   },
 ];
