@@ -7,11 +7,14 @@ import { IvyCarouselModule } from 'angular-responsive-carousel';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { CarouselComponent } from './carousel/carousel.component';
+import { HeaderComponent } from './header/header.component';
+import { LeftSidenavComponent } from './header/left-sidenav/left-sidenav.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +22,8 @@ import { CarouselComponent } from './carousel/carousel.component';
     FooterComponent,
     HomeComponent,
     CarouselComponent,
+    HeaderComponent,
+    LeftSidenavComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,6 +35,7 @@ import { CarouselComponent } from './carousel/carousel.component';
     MatToolbarModule,
     MatCardModule,
     IvyCarouselModule,
+    FontAwesomeModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

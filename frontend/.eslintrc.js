@@ -27,6 +27,7 @@ module.exports = {
     'eslint linebreak-style': [0, 'error', 'windows'],
     'import/prefer-default-export': 'off',
     'no-underscore-dangle': 'off',
+    'class-methods-use-this': 'off',
     'import/extensions': [
       'error',
       'ignorePackages',
