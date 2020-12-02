@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const { connect } = require('mongoose');
 const Videogame = require('./src/models/videogameModel');
-const videogameRouter = require('')(Videogame);
+const videogameRouter = require('./src/routes/videogameRoutes')(Videogame);
 
 const app = express();
 const port = process.env.PORT || 1728;
