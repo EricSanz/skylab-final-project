@@ -10,7 +10,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { CarouselComponent } from './carousel/carousel.component';
 import { HeaderComponent } from './header/header.component';
@@ -19,7 +18,6 @@ import { LeftSidenavComponent } from './left-sidenav/left-sidenav.component';
 @NgModule({
   declarations: [
     AppComponent,
-    FooterComponent,
     HomeComponent,
     CarouselComponent,
     HeaderComponent,

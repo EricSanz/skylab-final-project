@@ -16,8 +16,6 @@ export class LeftSidenavComponent {
 
   closeLeftSidenav(): any {
     const closeButton = <HTMLDivElement>document.getElementById('toogleLeftSideNav');
-    const changeIconClose = <HTMLDivElement>document.getElementById('openButton');
     closeButton.style.transform = 'translateX(0px)';
-    changeIconClose.style.display = 'block';
   }
 }
