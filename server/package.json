@@ -15,12 +15,15 @@
     "nodemon": "^2.0.6"
   },
   "devDependencies": {
+    "babel-eslint": "^10.1.0",
     "eslint": "^7.14.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.22.1"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "test:debug": "node --inspect-brk ./node_modules/jest/bin/jest.js --runInBand",
+    "test:coverage": "jest --testEnvironment=node --collect-coverage --watchAll"
   },
   "keywords": [],
   "author": "",
