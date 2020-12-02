@@ -1,7 +1,7 @@
 const { Schema, model } = require('mongoose');
 
 const videogameSchema = new Schema({
-  id: { type: Number },
+  id: { type: String },
   name: { type: String },
   platforms: { type: [String] },
   developer: { type: String },

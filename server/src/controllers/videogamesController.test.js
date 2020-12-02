@@ -1,7 +1,7 @@
 const videogames = require('../models/videogameModel');
 const videogamesController = require('./videogamesController')(videogames);
 
-describe('videogamesController', () => {
+describe('videogamesController Methods', () => {
   let res;
   beforeEach(() => {
     res = {
