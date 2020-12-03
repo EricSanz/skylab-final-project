@@ -18,22 +18,77 @@
             width: 115px;
             height: 70px;
         }
-        mat-icon {
+        fa-icon {
             outline: none;
-            font-size: 30px;
+            font-size: 25px;
             cursor: pointer;
         }
-        mat-icon:hover {
+        fa-icon:hover, .calendar-icon:hover, .search-icon:hover, .sidenav-open:hover, .sidenav-close:hover {
             color:#f0da14;
         }
         .header__left {
-            mat-icon {
-                margin-right: 60px;
+            display: flex;
+            align-items: center;
+            .calendar-icon {
+                cursor: pointer;
+                display: flex;
+                flex-direction: column;
+                margin-top: 15px;
+                fa-icon {
+                    margin-bottom: 3px;
+                    margin-left: 17px;
+                }
+                p {
+                    margin-top: 5px;
+                }
+            }
+            .search-icon {
+                cursor: pointer;
+                display: flex;
+                flex-direction: column;
+                margin-top: 15px;
+                fa-icon {
+                    margin-left: 5px;
+                    margin-bottom: 3px;
+                }
+                p {
+                    margin-top: 5px;
+                }
+            }
+            .sidenav-open {
+                cursor: pointer;
+                margin-top: 15px;
+                display: flex;
+                flex-direction: column;
+                fa-icon {
+                    margin-bottom: 2px;
+                    margin-left: 7px;
+                }
+                p {
+                    margin-top: 5px;
+                }
+            }
+            .sidenav-close {
+                cursor: pointer;
+                margin-top: 15px;
+                display: flex;
+                flex-direction: column;
+                fa-icon {
+                    margin-bottom: 2px;
+                    margin-left: 7px;
+                }
+                p {
+                    margin-top: 5px;
+                    margin-left: -15px;
+                }
+            }
+            fa-icon {
+                margin-right: 50px;
             }
         }
         .header__right {
-            mat-icon {
-                margin-left: 60px;
+            fa-icon {
+                margin-left: 50px;
             }
         }
     }

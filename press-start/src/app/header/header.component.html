@@ -2,15 +2,28 @@
 <div class="header">
     <div class="header-container">
         <div class="header__left">
-            <mat-icon class="openButton" (click)="child.openLeftSidenav()">menu</mat-icon>
-            <mat-icon routerLink="calendar">today</mat-icon>
-            <mat-icon>search</mat-icon>
+            <div class="sidenav-open" *ngIf="!changed">
+                <fa-icon [icon]="['fas', 'bars']" (click)="changed = !changed" (click)="child.openLeftSidenav()"></fa-icon>
+                <p>Menu</p>
+            </div>
+            <div class="sidenav-close" *ngIf="changed">
+                <fa-icon [icon]="['fas', 'arrow-alt-circle-left']" (click)="changed = !changed" (click)="child.closeLeftSidenav()"></fa-icon>
+                <p>Close Menu</p>
+            </div>
+            <div class="calendar-icon">
+                <fa-icon [icon]="['fas', 'calendar-alt']" routerLink="calendar"></fa-icon>
+                <p>Calendar</p>
+            </div>
+            <div class="search-icon">
+                <fa-icon [icon]="['fas', 'search']"></fa-icon>
+                <p>Search</p>
+            </div>
         </div>
         <img routerLink="home" src="https://trello-attachments.s3.amazonaws.com/5fbbd84e8e0ef93bcce1ac96/260x166/8f0fe204a80e710a59b710a40cde07d1/press-start-16-yellow.png" alt="logo">
         <div class="header__right">
-            <mat-icon>account_circle</mat-icon>
-            <mat-icon routerLink="articles-news">article</mat-icon>
-            <mat-icon class="header-icon__right" routerLink="shopping-cart">shopping_cart</mat-icon>
+            <fa-icon [icon]="['fas', 'user']"></fa-icon>
+            <fa-icon [icon]="['fas', 'newspaper']" routerLink="articles-news"></fa-icon>
+            <fa-icon [icon]="['fas', 'shopping-cart']" routerLink="shopping-cart"></fa-icon>
         </div>
     </div>
 </div>
