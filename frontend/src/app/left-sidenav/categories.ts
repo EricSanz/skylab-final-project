@@ -9,7 +9,7 @@ export const categories: Array<any> = [
   },
   {
     category: 'New Releases',
-    route: 'new',
+    route: 'new-releases',
   },
   {
     category: 'Coming Soon',

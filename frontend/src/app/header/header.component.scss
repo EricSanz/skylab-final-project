@@ -12,11 +12,14 @@
         justify-content: space-around;
         align-items: center;
         img {
+            cursor: pointer;
+            outline: none;
             padding-top: 5px;
             width: 115px;
             height: 70px;
         }
         mat-icon {
+            outline: none;
             font-size: 30px;
             cursor: pointer;
         }
