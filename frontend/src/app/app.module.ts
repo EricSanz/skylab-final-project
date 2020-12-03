@@ -14,6 +14,7 @@ import { HomeComponent } from './home/home.component';
 import { CarouselComponent } from './carousel/carousel.component';
 import { HeaderComponent } from './header/header.component';
 import { LeftSidenavComponent } from './left-sidenav/left-sidenav.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { LeftSidenavComponent } from './left-sidenav/left-sidenav.component';
     CarouselComponent,
     HeaderComponent,
     LeftSidenavComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
