@@ -1,4 +1,5 @@
 <app-left-sidenav id="openLeftSideNav" #child></app-left-sidenav>
+<app-search id="feature-search" #child1></app-search>
 <div class="header">
     <div class="header-container">
         <div class="header__left">
@@ -15,7 +16,7 @@
                 <p>Calendar</p>
             </div>
             <div class="search-icon">
-                <fa-icon [icon]="['fas', 'search']"></fa-icon>
+                <fa-icon [icon]="['fas', 'search']" (click)="child1.openCloseSearchBar()"></fa-icon>
                 <p>Search</p>
             </div>
         </div>

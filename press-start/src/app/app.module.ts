@@ -27,6 +27,7 @@ import { NintendoComponent } from './nintendo/nintendo.component';
 import { MerchandisingComponent } from './merchandising/merchandising.component';
 import { AccesoriesComponent } from './accesories/accesories.component';
 import { InformationComponent } from './information/information.component';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { InformationComponent } from './information/information.component';
     MerchandisingComponent,
     AccesoriesComponent,
     InformationComponent,
+    SearchComponent,
   ],
   imports: [
     BrowserModule,
