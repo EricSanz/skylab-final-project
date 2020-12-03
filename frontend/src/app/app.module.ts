@@ -26,6 +26,7 @@ import { XboxComponent } from './xbox/xbox.component';
 import { NintendoComponent } from './nintendo/nintendo.component';
 import { MerchandisingComponent } from './merchandising/merchandising.component';
 import { AccesoriesComponent } from './accesories/accesories.component';
+import { InformationComponent } from './information/information.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { AccesoriesComponent } from './accesories/accesories.component';
     NintendoComponent,
     MerchandisingComponent,
     AccesoriesComponent,
+    InformationComponent,
   ],
   imports: [
     BrowserModule,
