@@ -3,12 +3,11 @@
     position: fixed;
     top: 0;
     margin-top: 80px;
-    left: -400px;
+    left: 0px;
     height: 100%;
     width: 350px;
-    background: #e2e0de;
     border-right: 1px solid #161616;
-    box-shadow: 15px 0px 30px 0px rgba(#444343, 0.5);
+    box-shadow: 0px 0px 10px 0px rgba(#000000, 0.9);
     ul {
         background: #f0da14;
         height: 100vh;
@@ -20,7 +19,7 @@
             background: #f0da14;
             height: 40px;
             padding: 5px;
-            border-bottom: 1px solid #f5cb5c;
+            border-bottom: 1px solid #ffffff;
             margin-bottom: 1px;
             cursor: pointer;
             p {
@@ -44,7 +43,6 @@
             flex-direction: column;
             padding-left: 45px;
             padding-top: 20px;
-            border-top: 2px solid white;
             height: 80px;
             border-bottom: 2px solid white;
             .newsletter__title {

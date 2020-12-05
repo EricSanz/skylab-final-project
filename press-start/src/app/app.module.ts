@@ -28,6 +28,7 @@ import { MerchandisingComponent } from './merchandising/merchandising.component'
 import { AccesoriesComponent } from './accesories/accesories.component';
 import { InformationComponent } from './information/information.component';
 import { SearchComponent } from './search/search.component';
+import { RightSidenavComponent } from './right-sidenav/right-sidenav.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { SearchComponent } from './search/search.component';
     AccesoriesComponent,
     InformationComponent,
     SearchComponent,
+    RightSidenavComponent,
   ],
   imports: [
     BrowserModule,
