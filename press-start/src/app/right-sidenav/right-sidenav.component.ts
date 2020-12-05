@@ -10,6 +10,7 @@ export class RightSidenavComponent implements OnInit {
   constructor() { }
 
   @Input() public fieldTextType: boolean = false;
+  @Input() public toggleSidenav: boolean = false;
 
   toggleFieldTextType() {
     this.fieldTextType = !this.fieldTextType;
@@ -18,6 +19,13 @@ export class RightSidenavComponent implements OnInit {
 
     this.fieldTextType ? noSeePassword.style.display = 'block' : noSeePassword.style.display = 'none';
     this.fieldTextType ? seePassword.style.display = 'none' : seePassword.style.display = 'block';
+  }
+
+  toggleRightSidenav(): any {
+    this.toggleSidenav = !this.toggleSidenav;
+    const openRightSidenav = <HTMLDivElement>document.getElementById('toogleRightSideNav');
+
+    this.toggleSidenav ? openRightSidenav.style.transform = 'translateX(-400px)' : openRightSidenav.style.transform = 'translateX(0px)';
   }
 
   ngOnInit(): void {

@@ -24,7 +24,7 @@
         <img routerLink="home" src="https://trello-attachments.s3.amazonaws.com/5fbbd84e8e0ef93bcce1ac96/260x166/8f0fe204a80e710a59b710a40cde07d1/press-start-16-yellow.png" alt="logo">
         <div class="header__right">
             <div class="signin-icon">
-                <fa-icon [icon]="['fas', 'user']"></fa-icon>
+                <fa-icon [icon]="['fas', 'user']" (click)="child2.toggleRightSidenav()"></fa-icon>
                 <p>Sign in</p>
             </div>
             <div class="news-articles-icon">

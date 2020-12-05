@@ -1,8 +1,8 @@
-<section class="right__sidenav" id='toogleLeftSideNav'>
+<section class="right__sidenav" id='toogleRightSideNav'>
     <div class="right__sidenav-container">
         <div class="right__sidenav-title">
             <p>My Account</p>
-            <fa-icon [icon]="['fas', 'times']"></fa-icon>
+            <fa-icon [icon]="['fas', 'times']" (click)="toggleRightSidenav()"></fa-icon>
         </div>
         <div class="signIn-signUp">
             <p>Sign In | Sign Up</p>
