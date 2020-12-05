@@ -1,5 +1,29 @@
 <section class="right__sidenav" id='toogleLeftSideNav'>
     <div class="right__sidenav-container">
-
+        <div class="right__sidenav-title">
+            <p>My Account</p>
+            <fa-icon [icon]="['fas', 'times']"></fa-icon>
+        </div>
+        <div class="signIn-signUp">
+            <p>Sign In | Sign Up</p>
+            <div class="email-container">
+                <input type="text" placeholder="E-mail">
+                <fa-icon [icon]="['fas', 'envelope']"></fa-icon>
+            </div>
+            <div class="password-container">
+                <input [type]="fieldTextType ? 'text' : 'password'" class="password-control" placeholder="Password">
+                <fa-icon id="eye" [icon]="['fas', 'eye']" (click)="toggleFieldTextType()"></fa-icon>
+                <fa-icon id="eye-slash" [icon]="['fas', 'eye-slash']" (click)="toggleFieldTextType()"></fa-icon>
+            </div>
+            <p class="forgot-password">Forgot Your Password?</p>
+            <button>Send</button>
+        </div>
+        <div class="other-signIn-methods">
+            <p class="title-methods">Other sign In Methods:</p>
+            <div>
+                <fa-icon [icon]="['fab', 'facebook']"></fa-icon>
+                <fa-icon [icon]="['fab', 'google']"></fa-icon>
+            </div>
+        </div>
     </div>
 </section>
