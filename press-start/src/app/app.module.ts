@@ -29,6 +29,7 @@ import { AccesoriesComponent } from './accesories/accesories.component';
 import { InformationComponent } from './information/information.component';
 import { SearchComponent } from './search/search.component';
 import { RightSidenavComponent } from './right-sidenav/right-sidenav.component';
+import { DetailComponent } from './detail/detail.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { RightSidenavComponent } from './right-sidenav/right-sidenav.component';
     InformationComponent,
     SearchComponent,
     RightSidenavComponent,
+    DetailComponent,
   ],
   imports: [
     BrowserModule,
