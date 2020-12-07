@@ -1,0 +1,6 @@
+<section class="videogame__list-container">
+    <div *ngFor="let videogame of videogames$ | async" class="videogame__card">
+        <a routerLink="/product/{{videogame.id}}"></a>
+        <img src="{{videogame.cover}}">
+    </div>
+</section>

@@ -1,0 +1,16 @@
+export interface Videogame {
+    id: String,
+    name: string,
+    genre: string[],
+    platforms: string[],
+    developer: string,
+    cover: string,
+    images: string[],
+    description: string[],
+    pegi: string,
+    price: number,
+    salePrice: number,
+    stock: boolean,
+    release: string,
+    comments: string[],
+}

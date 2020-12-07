@@ -1,4 +1,6 @@
 <app-left-sidenav id="openLeftSideNav" #child></app-left-sidenav>
+<app-search id="feature-search" #child1></app-search>
+<app-right-sidenav #child2></app-right-sidenav>
 <div class="header">
     <div class="header-container">
         <div class="header__left">
@@ -15,15 +17,24 @@
                 <p>Calendar</p>
             </div>
             <div class="search-icon">
-                <fa-icon [icon]="['fas', 'search']"></fa-icon>
+                <fa-icon [icon]="['fas', 'search']" (click)="child1.openCloseSearchBar()"></fa-icon>
                 <p>Search</p>
             </div>
         </div>
         <img routerLink="home" src="https://trello-attachments.s3.amazonaws.com/5fbbd84e8e0ef93bcce1ac96/260x166/8f0fe204a80e710a59b710a40cde07d1/press-start-16-yellow.png" alt="logo">
         <div class="header__right">
-            <fa-icon [icon]="['fas', 'user']"></fa-icon>
-            <fa-icon [icon]="['fas', 'newspaper']" routerLink="articles-news"></fa-icon>
-            <fa-icon [icon]="['fas', 'shopping-cart']" routerLink="shopping-cart"></fa-icon>
+            <div class="signin-icon">
+                <fa-icon [icon]="['fas', 'user']" (click)="child2.toggleRightSidenav()"></fa-icon>
+                <p>Sign in</p>
+            </div>
+            <div class="news-articles-icon">
+                <fa-icon [icon]="['fas', 'newspaper']" routerLink="articles-news"></fa-icon>
+                <p>News</p>
+            </div>
+            <div class="shopping-cart-icon">
+                <fa-icon [icon]="['fas', 'shopping-cart']" routerLink="shopping-cart"></fa-icon>
+                <p>Cart</p>
+            </div>
         </div>
     </div>
 </div>
