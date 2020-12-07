@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Videogame } from './videogame';
-import { Observable, of } from 'rxjs';
+import { Observable, of, Subject } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, tap } from 'rxjs/operators'
 
@@ -9,21 +9,25 @@ import { catchError, tap } from 'rxjs/operators'
 })
 export class VideogameService {
 
-  private videogamesUrl = 'api/videogames';
+  public videogamesUrl = 'http://localhost:1728'
 
   httpOptions = {
-    headers: new HttpHeaders({'Content-Type': 'application/json'})
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json'
+    })
   };
 
+  videogames$ = new Subject<Videogame[]>()
+
   constructor(
-    private http: HttpClient
+    public http: HttpClient
   ) { }
 
-  private handleError<T>(operation= 'operation', result?: T) {
-    return (error: any): Observable<T> => {
+  handleError (operation= 'operation', result?: any) {
+    return (error: any): Observable<any> => {
       console.log(error);
       console.log(`${operation} failed: ${error.message}`);
-      return of(result as T);
+      return of(result);
     };
   }
 
@@ -31,16 +35,17 @@ export class VideogameService {
     return this.http.get<Videogame[]>(this.videogamesUrl)
     .pipe(
       tap(() => console.log('fetched videogames')),
-      catchError(this.handleError<Videogame[]>('getVideogames', []))
+      tap((videogames) => this.videogames$.next(videogames)),
+      catchError(this.handleError('getVideogames', []))
     );
   }
 
-  getVideogame(id: number): Observable<Videogame> {
-    const url = `${this.videogamesUrl}/${id}`;
+  getVideogame(videogameId: string): Observable<Videogame> {
+    const url = `${this.videogamesUrl}/product/${videogameId}`;
     return this.http.get<Videogame>(url)
     .pipe(
-      tap(() => console.log(`fetched videogame id=${id}`)),
-      catchError(this.handleError<Videogame>(`getVideogame id=${id}`))
+      tap(() => console.log(`fetched videogame id=${videogameId}`)),
+      catchError(this.handleError(`getVideogame`, []))
     );
   }
 }

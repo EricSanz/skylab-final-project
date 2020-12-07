@@ -1,1 +1,24 @@
-<p>detail works!</p>
+<div *ngIf="videogame$ | async as videogame" class="product__details-container">
+    <div class="product__details">
+        <div class="product__details-left">
+            <div class="product__title-container">
+                <p class="product-title">{{videogame.name}}</p>
+                <p class="product-platform" *ngFor="let platforms of videogame.platforms">{{platforms}}</p>
+            </div>
+            <img class="product-cover" src="{{videogame.cover}}">
+            <div class="product-general-info">
+                <div class="genre-container">
+                    <p class="genre-title">Genre:</p>
+                    <p class="genre" *ngFor="let genre of videogame.genre">{{genre}}</p>
+                </div>
+                <div class="developer-container">
+                    <p class="developer-title">Developer:</p>
+                    <p class="developer">{{videogame.developer}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="product__details-right">
+
+        </div>
+    </div>
+</div>

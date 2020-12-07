@@ -1,5 +1,5 @@
 export interface Videogame {
-    id: number,
+    id: String,
     name: string,
     genre: string[],
     platforms: string[],

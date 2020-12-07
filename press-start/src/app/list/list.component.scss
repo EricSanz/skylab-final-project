@@ -1,0 +1,10 @@
+.videogame__list-container {
+    width: 100%;
+    height: 500px;
+    background: blue;
+    .videogame__card {
+        width: 125px;
+        height: 250px;
+        background: black;
+    }
+}

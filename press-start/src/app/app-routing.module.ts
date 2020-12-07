@@ -7,6 +7,7 @@ import { ComingsoonComponent } from './comingsoon/comingsoon.component';
 import { DetailComponent } from './detail/detail.component';
 import { HomeComponent } from './home/home.component';
 import { InformationComponent } from './information/information.component';
+import { ListComponent } from './list/list.component';
 import { MerchandisingComponent } from './merchandising/merchandising.component';
 import { NewReleasesComponent } from './new-releases/new-releases.component';
 import { NintendoComponent } from './nintendo/nintendo.component';
@@ -17,8 +18,9 @@ import { XboxComponent } from './xbox/xbox.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'detail/:id', component: DetailComponent},
   { path: 'home', component: HomeComponent },
+  { path: 'product/:videogameId', component: DetailComponent},
+  { path: 'products', component: ListComponent},
   { path: 'calendar', component: CalendarComponent },
   { path: 'articles-news', component: ArticlesNewsComponent },
   { path: 'shopping-cart', component: ShoppingCartComponent },
@@ -31,6 +33,7 @@ const routes: Routes = [
   { path: 'merchandising', component: MerchandisingComponent },
   { path: 'accesories', component: AccesoriesComponent },
   { path: 'information', component: InformationComponent },
+  { path: '**', redirectTo: '/home', pathMatch: 'full'}
 ];
 
 @NgModule({

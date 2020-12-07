@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
@@ -30,6 +31,7 @@ import { InformationComponent } from './information/information.component';
 import { SearchComponent } from './search/search.component';
 import { RightSidenavComponent } from './right-sidenav/right-sidenav.component';
 import { DetailComponent } from './detail/detail.component';
+import { ListComponent } from './list/list.component';
 
 @NgModule({
   declarations: [
@@ -53,10 +55,12 @@ import { DetailComponent } from './detail/detail.component';
     SearchComponent,
     RightSidenavComponent,
     DetailComponent,
+    ListComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     MatIconModule,
     MatSidenavModule,
