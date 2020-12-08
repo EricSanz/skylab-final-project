@@ -9,15 +9,16 @@ import { Observable } from 'rxjs';
   templateUrl: './detail.component.html',
   styleUrls: ['./detail.component.scss']
 })
-export class DetailComponent{
+export class DetailComponent {
 
   get videogameId () {
     return this.route.snapshot.paramMap.get('videogameId')!;
   }
   
   videogame$: Observable<Videogame> = this.videogameService.getVideogame(this.videogameId);
+  //preguntar a gilbe sobre interface segundo nivel array objetos y 
   videogame: any = this.videogameService.getVideogame(this.videogameId)
-  .subscribe((coso: Videogame) => {this.videogame = coso })
+  .subscribe((info: Videogame) => {this.videogame = info })
 
   coverIndex:number = 0;
 
@@ -42,14 +43,5 @@ export class DetailComponent{
         this.coverIndex = 0;
         break;
     }
-  }
-
-  updateSalePrice(): any {
-    const price = <HTMLSpanElement>document.getElementById('stylePrice');
-    this.videogame$.subscribe((coso: Videogame) =>{this.videogame =coso })
-    console.log(this.videogame)
-    // if (this.videogame$.sales === true) {
-
-    // }
   }
 }

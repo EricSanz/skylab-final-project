@@ -14,6 +14,6 @@ export interface Videogame {
     release: string,
     comments: string[],
     platform: Platform,
-    description: [{title: string, text: string[]}],
+    description: Description[],
     sales: boolean,
 }
