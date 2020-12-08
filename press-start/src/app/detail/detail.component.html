@@ -45,7 +45,7 @@
                     </button>
                 </div>
                 <div class="info__options-container">
-                    <button class="info__options-button">Description</button>
+                    <button class="info__options-button" (click)="seeDescription()">Description</button>
                     <button class="info__options-button">Pictures</button>
                     <button class="info__options-button">Comments</button>
                 </div>
@@ -69,10 +69,10 @@
                     </div>
                 </div>
             </div>
-            <div class="product__images-container">
+            <div class="product__images-container" id="see-pictures">
 
             </div>
-            <div class="product__comments-container">
+            <div class="product__comments-container" id="see-comments">
 
             </div>
         </div>
