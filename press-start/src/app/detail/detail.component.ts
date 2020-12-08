@@ -16,6 +16,8 @@ export class DetailComponent{
   }
   
   videogame$: Observable<Videogame> = this.videogameService.getVideogame(this.videogameId);
+  videogame: any = this.videogameService.getVideogame(this.videogameId)
+  .subscribe((coso: Videogame) => {this.videogame = coso })
 
   coverIndex:number = 0;
 
@@ -25,6 +27,7 @@ export class DetailComponent{
   ) { }
 
   handleOnChange(event: any): void {
+    console.log(this.videogame)
     switch (event.target.value) {
       case 'PlayStation 4':
         this.coverIndex = 0;
@@ -39,5 +42,14 @@ export class DetailComponent{
         this.coverIndex = 0;
         break;
     }
+  }
+
+  updateSalePrice(): any {
+    const price = <HTMLSpanElement>document.getElementById('stylePrice');
+    this.videogame$.subscribe((coso: Videogame) =>{this.videogame =coso })
+    console.log(this.videogame)
+    // if (this.videogame$.sales === true) {
+
+    // }
   }
 }

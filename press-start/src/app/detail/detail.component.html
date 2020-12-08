@@ -26,11 +26,11 @@
         </div>
         <div class="product__details-right">
             <div class="product__buy">
-                <span>{{videogame.salePrice}}</span><span class="strikeout">{{videogame.price | currency: 'EUR'}}</span>
+                <span>{{videogame.salePrice}}</span><span id="stylePrice" class="strikeout">{{videogame.price | currency: 'EUR'}}</span>
             </div>
-            <div  class="product__description-container" *ngFor="let description of videogame.description">
-                <p class="description-titles">{{description.title}}</p>
-                <div *ngFor="let text of description.text">
+            <div  class="product__description-container" *ngFor="let iterableDesc of videogame.description">
+                <p class="description-titles">{{iterableDesc.title}}</p>
+                <div *ngFor="let text of iterableDesc.text">
                     {{text}}
                 </div>
             </div>

@@ -1,4 +1,5 @@
 export interface Description {
-    title: string,
+    title: string
     text: string[]
 }
+
