@@ -1,3 +1,4 @@
 export interface Description {
-    object: { title: string , text: string[]}
+    title: string,
+    text: string[]
 }

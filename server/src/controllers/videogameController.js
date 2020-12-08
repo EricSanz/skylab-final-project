@@ -1,7 +1,7 @@
 function videogameController(Videogame) {
   function getMethod(req, res) {
-    const query = { id: +req.query.id };
-    Videogame.findOne(query, (errorGetVideogame, videogame) => ((errorGetVideogame)
+    const { id } = req.params;
+    Videogame.findById(id, (errorGetVideogame, videogame) => ((errorGetVideogame)
       ? res.send(errorGetVideogame) : res.json(videogame)));
   }
 

@@ -3,11 +3,19 @@ const { Schema, model } = require('mongoose');
 const videogameSchema = new Schema({
   id: { type: String },
   name: { type: String },
+  genre: { type: [String] },
   platforms: { type: [String] },
   developer: { type: String },
-  price: { type: Number },
-  salePrice: { type: Number },
+  cover: { type: String },
+  images: { type: [String] },
+  description: { type: [Object] },
+  pegi: { type: String },
+  price: { type: String },
+  salePrice: { type: String },
+  stock: { type: Boolean },
   release: { type: String },
+  comments: { type: [String] },
+  sales: { type: Boolean },
 });
 
 module.exports = model('videogames', videogameSchema);

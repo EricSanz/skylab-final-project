@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { Videogame } from '../videogame';
 import { ActivatedRoute } from '@angular/router';
 import { VideogameService } from '../videogame.service';
@@ -18,8 +18,6 @@ export class DetailComponent{
   videogame$: Observable<Videogame> = this.videogameService.getVideogame(this.videogameId);
 
   coverIndex:number = 0;
-  
-  @Input() description: any[] | undefined;
 
   constructor(
     public route: ActivatedRoute,
@@ -42,5 +40,4 @@ export class DetailComponent{
         break;
     }
   }
-
 }
