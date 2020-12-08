@@ -16,7 +16,6 @@ export class DetailComponent {
   }
   
   videogame$: Observable<Videogame> = this.videogameService.getVideogame(this.videogameId);
-  //preguntar a gilbe sobre interface segundo nivel array objetos y 
   videogame: any = this.videogameService.getVideogame(this.videogameId)
   .subscribe((info: Videogame) => {this.videogame = info })
 

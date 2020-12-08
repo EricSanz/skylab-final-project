@@ -2,10 +2,15 @@
     <div class="product__details">
         <div class="product__details-left">
             <div class="product__title-container">
-                <p class="product-title">{{videogame.name}}</p>
+                <div class="title__left-container">
+                    <p class="product-title">{{videogame.name}}</p>
                     <select class="product-platform" name="platform-select" (change)="handleOnChange($event)">
                         <option class="product-platform" *ngFor="let name of videogame.platform.name">{{name}}</option>
                     </select>
+                </div>
+                <div class="title__right-container">
+                    <fa-icon class="add__favourites-icon" [icon]="['fas', 'heart']"></fa-icon>
+                </div>
             </div>
             <img class="product-cover" id="cover-image" src="{{videogame.platform.cover[coverIndex]}}">
             <div class="product-general-info">
@@ -26,18 +31,36 @@
         </div>
         <div class="product__details-right">
             <div class="product__buy">
-                <span>{{videogame.salePrice}}</span>
-                <div *ngIf="videogame.sales; else elseBlock"  class="strikeout">{{videogame.price | currency: 'EUR'}}</div>
-                <ng-template #elseBlock >
-                    <p class="notstrikeout">
-                        {{videogame.price | currency: 'EUR'}}
-                    </p>
+                <div class="price">
+                    <div *ngIf="videogame.sales; else elseBlock"  class="notstrikeout">{{videogame.price | currency: 'EUR'}}</div>
+                    <ng-template #elseBlock >
+                        <p class="strikeout">
+                            {{videogame.price | currency: 'EUR'}}
+                        </p>
+                    </ng-template>
+                    <span class="notstrikeout">{{videogame.salePrice | currency: 'EUR'}}</span>
+                    <button class="add-cart">
+                        <fa-icon [icon]="['fas', 'cart-plus']"></fa-icon>
+                        <p class="add-cart-label">Add to Cart</p>
+                    </button>
+                </div>
+                <div *ngIf="videogame.stock; else elseColor" class="stock-green">
+                        <fa-icon [icon]="['fas', 'boxes']"></fa-icon>
+                        <p class="stock">Stock available</p>
+                </div>
+                <ng-template #elseColor>
+                    <div class="not-stock">
+                        <fa-icon class="stock-red" [icon]="['fas', 'boxes']"></fa-icon>
+                        <p class="stock">Stock not available</p>
+                    </div>
                 </ng-template>
             </div>
-            <div  class="product__description-container" *ngFor="let item of videogame.description">
-                <p class="description-titles">{{item.title}}</p>
-                <div *ngFor="let text of item.text">
-                    {{text}}
+            <div class="product__description-container"> 
+                <div  class="product__description" *ngFor="let item of videogame.description">
+                    <p class="description-titles">{{item.title}}</p>
+                    <div *ngFor="let text of item.text">
+                        {{text}}
+                    </div>
                 </div>
             </div>
             <div class="product__images-container">
