@@ -3,22 +3,43 @@
         <div class="product__details-left">
             <div class="product__title-container">
                 <p class="product-title">{{videogame.name}}</p>
-                <p class="product-platform" *ngFor="let platforms of videogame.platforms">{{platforms}}</p>
+                    <select class="product-platform" name="platform-select" (change)="handleOnChange($event)">
+                        <option class="product-platform" *ngFor="let name of videogame.platform.name">{{name}}</option>
+                    </select>
             </div>
-            <img class="product-cover" src="{{videogame.cover}}">
+            <img class="product-cover" id="cover-image" src="{{videogame.platform.cover[coverIndex]}}">
             <div class="product-general-info">
-                <div class="genre-container">
-                    <p class="genre-title">Genre:</p>
-                    <p class="genre" *ngFor="let genre of videogame.genre">{{genre}}</p>
+                <div class="general-info-container">
+                    <div class="genre-container">
+                        <p class="genre-title">Genres:</p>
+                        <p class="genre" *ngFor="let genre of videogame.genre">{{genre}}</p>
+                    </div>
+                    <div class="developer-container">
+                        <p class="developer-title">Developer:</p>
+                        <p class="developer">{{videogame.developer}}</p>
+                    </div>
                 </div>
-                <div class="developer-container">
-                    <p class="developer-title">Developer:</p>
-                    <p class="developer">{{videogame.developer}}</p>
+                <div class="pegi-container">
+                    <img class="pegi-image" src="{{videogame.pegi}}">
                 </div>
             </div>
         </div>
         <div class="product__details-right">
+            <div class="product__buy">
+                <span>{{videogame.salePrice}}</span><span id="stylePrice" class="strikeout">{{videogame.price | currency: 'EUR'}}</span>
+            </div>
+            <div  class="product__description-container" *ngFor="let iterableDesc of videogame.description">
+                <p class="description-titles">{{iterableDesc.title}}</p>
+                <div *ngFor="let text of iterableDesc.text">
+                    {{text}}
+                </div>
+            </div>
+            <div class="product__images-container">
 
+            </div>
+            <div class="product__comments-container">
+
+            </div>
         </div>
     </div>
 </div>
