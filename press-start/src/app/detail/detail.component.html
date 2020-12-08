@@ -44,6 +44,11 @@
                         <p class="add-cart-label">Add to Cart</p>
                     </button>
                 </div>
+                <div class="info__options-container">
+                    <button class="info__options-button">Description</button>
+                    <button class="info__options-button">Pictures</button>
+                    <button class="info__options-button">Comments</button>
+                </div>
                 <div *ngIf="videogame.stock; else elseColor" class="stock-green">
                         <fa-icon [icon]="['fas', 'boxes']"></fa-icon>
                         <p class="stock">Stock available</p>
@@ -55,10 +60,11 @@
                     </div>
                 </ng-template>
             </div>
-            <div class="product__description-container"> 
+            <div class="product__description-container" id="see-description"> 
+                <h1>{{videogame.name}}</h1>
                 <div  class="product__description" *ngFor="let item of videogame.description">
                     <p class="description-titles">{{item.title}}</p>
-                    <div *ngFor="let text of item.text">
+                    <div class="description-text" *ngFor="let text of item.text">
                         {{text}}
                     </div>
                 </div>

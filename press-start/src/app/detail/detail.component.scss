@@ -183,6 +183,27 @@
                         transform: rotate(-15deg);
                     }
                 }
+                .info__options-container {
+                    height: 100%;
+                    margin-left: 30px;
+                    .info__options-button {
+                        width: 130px;
+                        height: 100%;
+                        font-size: 16px;
+                        font-weight: bold;
+                        background: #f0da14;
+                        color: #161616;
+                        margin-right: 10px;
+                        margin-left: 10px;
+                        outline: none;
+                        border: none;
+                        cursor: pointer;
+                    }
+                    .info__options-button:hover {
+                        transform: scale(1.1);
+                        background: #f0aa14;
+                    }
+                }
                 .add-cart {
                     display: inline-flex;
                     align-items: center;
@@ -194,7 +215,7 @@
                     cursor: pointer;
                 }
                 .add-cart-label {
-                    display: none;
+                    visibility: hidden;
                     font-size: 20px;
                     margin-top: 11px;
                     border-radius: 15px;
@@ -208,18 +229,29 @@
                 }
                 .add-cart:hover {
                     .add-cart-label{
-                        display:block;
+                        visibility: visible;
                     }
                     color: #f0da14;
                 }
             }
             .product__description-container {
+                display: block;
+                height: 600px;
                 overflow: auto;
-                height: 500px;
-                .product__description {
+                h1 {
                     padding: 30px;
+                    font-weight: bold;
+                    font-size: 30px;
+                }
+                .product__description {
+                    padding-left: 30px;
+                    padding-right: 30px;
                     .description-titles {
-    
+                        font-weight: bold;
+                        font-size: 17px;
+                    }
+                    .description-text {
+                        margin-bottom: 20px;
                     }
                 }
             }
