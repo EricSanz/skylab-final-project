@@ -21,9 +21,7 @@ export class DetailComponent {
 
   coverIndex:number = 0;
 
-  toggleDescription: boolean = false;
-  togglePictures: boolean = false;
-  toggleComments: boolean = false;
+  toggleGeneral: boolean = false;
 
   constructor(
     public route: ActivatedRoute,
@@ -49,23 +47,35 @@ export class DetailComponent {
   }
 
   seeDescription(): any {
-    this.toggleDescription = !this.toggleDescription;
-    const descriptionOn = <HTMLDivElement>document.getElementById('see-description')
-    this.toggleDescription ? descriptionOn.style.display = 'block' : descriptionOn.style.display = 'none';
-    this.toggleDescription = false;
+    this.toggleGeneral = !this.toggleGeneral;
+    const descriptionButton = <HTMLButtonElement>document.getElementById('description-button');
+    const descriptionOn = <HTMLDivElement>document.getElementById('see-description');
+    const pictureButton = <HTMLButtonElement>document.getElementById('picture-button');
+    const picturesOn = <HTMLDivElement>document.getElementById('see-pictures');
+    this.toggleGeneral ? descriptionOn.style.display = 'block' : descriptionOn.style.display = 'none';
+    this.toggleGeneral ? picturesOn.style.display = 'none' : picturesOn.style.display = 'block';
+    this.toggleGeneral ? descriptionButton.style['border-bottom'] = '10px solid #f0aa14' : descriptionButton.style['border-bottom'] = 'none';
+    this.toggleGeneral ? pictureButton.style['border-bottom'] = 'none' : pictureButton.style['border-bottom'] = '10px solid #f0aa14';
+    this.toggleGeneral = false;
   }
 
   seePictures(): any {
-    this.togglePictures = !this.togglePictures;
+    this.toggleGeneral = !this.toggleGeneral;
     const picturesOn = <HTMLDivElement>document.getElementById('see-pictures');
-    this.togglePictures ? picturesOn.style.display = 'block' : picturesOn.style.display = 'none';
-    this.togglePictures = false;
+    const pictureButton = <HTMLButtonElement>document.getElementById('picture-button');
+    const descriptionButton = <HTMLButtonElement>document.getElementById('description-button');
+    const descriptionOn = <HTMLDivElement>document.getElementById('see-description');
+    this.toggleGeneral ? picturesOn.style.display = 'block' : picturesOn.style.display = 'none';
+    this.toggleGeneral ? descriptionOn.style.display = 'none' : descriptionOn.style.display = 'block';
+    this.toggleGeneral ? pictureButton.style['border-bottom'] = '10px solid #f0aa14' : pictureButton.style['border-bottom'] = 'none';
+    this.toggleGeneral ? descriptionButton.style['border-bottom'] = 'none' : descriptionButton.style['border-bottom'] = '10px solid #f0aa14';
+    this.toggleGeneral = false;
   }
 
   seeComments(): any {
-    this.toggleComments = !this.toggleComments;
+    this.toggleGeneral = !this.toggleGeneral;
     const commentsOn = <HTMLDivElement>document.getElementById('see-comments');
-    this.toggleComments ? commentsOn.style.display = 'block' : commentsOn.style.display = 'none';
-    this.toggleComments = false;
+    this.toggleGeneral ? commentsOn.style.display = 'block' : commentsOn.style.display = 'none';
+    this.toggleGeneral = false;
   }
 }
