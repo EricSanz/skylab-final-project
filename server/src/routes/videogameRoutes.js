@@ -1,6 +1,6 @@
 const { Router } = require('express');
-const videogamesController = require('../controllers/videogamesController');
-const videogameController = require('../controllers/videogameController');
+const videogamesController = require('../controllers/videogameControllers/videogamesController');
+const videogameController = require('../controllers/videogameControllers/videogameController');
 
 function videogameRoute(Videogame) {
   const videogameRouter = Router();

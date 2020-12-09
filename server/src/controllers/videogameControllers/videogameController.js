@@ -1,3 +1,5 @@
+const userController = require('../userControllers/userController');
+
 function videogameController(Videogame) {
   function getMethod(req, res) {
     const { id } = req.params;
