@@ -8,7 +8,7 @@ function userController(User) {
   function postMethod({ body }, res) {
     const userId = body.uid;
     const query = { uid: userId };
-    userController.findOneAndUpdate(query, body, { upsert: true, useFindAndModify: false }, (
+    User.findOneAndUpdate(query, body, { upsert: true, useFindAndModify: false }, (
       errorFindUser, userModified,
     ) => (
       (errorFindUser) ? res.send(errorFindUser) : res.json(userModified)));

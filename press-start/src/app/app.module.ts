@@ -32,6 +32,19 @@ import { SearchComponent } from './search/search.component';
 import { RightSidenavComponent } from './right-sidenav/right-sidenav.component';
 import { DetailComponent } from './detail/detail.component';
 import { ListComponent } from './list/list.component';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+
+const firebaseConfig = {
+    apiKey: "AIzaSyCclbtjI5Uw49dlp47nfTpoLF8HMQxM1RA",
+    authDomain: "press-start-b9685.firebaseapp.com",
+    projectId: "press-start-b9685",
+    storageBucket: "press-start-b9685.appspot.com",
+    messagingSenderId: "532645051796",
+    appId: "1:532645051796:web:35f856b0df4bc4d2f62381",
+    measurementId: "G-Y6Z9QMCC6E"
+}
 
 @NgModule({
   declarations: [
@@ -68,6 +81,9 @@ import { ListComponent } from './list/list.component';
     MatToolbarModule,
     MatCardModule,
     FontAwesomeModule,
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFirestoreModule,
+    AngularFireAuthModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
