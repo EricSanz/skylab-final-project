@@ -203,6 +203,10 @@
                         transform: scale(1.1);
                         background: #f0aa14;
                     }
+                    .info__options-button:active {
+                        transform: scale(1.1);
+                        background: #f0aa14;
+                    }
                 }
                 .add-cart {
                     display: inline-flex;
@@ -252,6 +256,21 @@
                     }
                     .description-text {
                         margin-bottom: 20px;
+                    }
+                }
+            }
+            .product__images-container {
+                display: none;
+                height: 600px;
+                overflow: auto;
+                .images-container {
+                    padding: 50px;
+                    display: flex;
+                    flex-wrap: wrap;
+                    .images-resolution {
+                        margin: 12.5px;
+                        width: 425px;
+                        height: 225px;
                     }
                 }
             }

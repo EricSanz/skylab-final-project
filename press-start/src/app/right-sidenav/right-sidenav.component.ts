@@ -12,7 +12,7 @@ export class RightSidenavComponent implements OnInit {
   @Input() public fieldTextType: boolean = false;
   @Input() public toggleSidenav: boolean = false;
 
-  toggleFieldTextType() {
+  toggleFieldTextType(): any {
     this.fieldTextType = !this.fieldTextType;
     const seePassword = <HTMLDivElement>document.getElementById('eye');
     const noSeePassword = <HTMLDivElement>document.getElementById('eye-slash');

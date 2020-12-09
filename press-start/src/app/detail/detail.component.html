@@ -45,8 +45,8 @@
                     </button>
                 </div>
                 <div class="info__options-container">
-                    <button class="info__options-button">Description</button>
-                    <button class="info__options-button">Pictures</button>
+                    <button class="info__options-button" id="description-button" (click)="seeDescription()">Description</button>
+                    <button class="info__options-button" id="picture-button" (click)="seePictures()">Pictures</button>
                     <button class="info__options-button">Comments</button>
                 </div>
                 <div *ngIf="videogame.stock; else elseColor" class="stock-green">
@@ -69,10 +69,15 @@
                     </div>
                 </div>
             </div>
-            <div class="product__images-container">
-
+            <div class="product__images-container" id="see-pictures">
+                <div class="images-container">
+                    <img class="images-resolution" [src]="videogame.images[0]">
+                    <img class="images-resolution" [src]="videogame.images[1]">
+                    <img class="images-resolution" [src]="videogame.images[2]">
+                    <img class="images-resolution" [src]="videogame.images[3]">
+                </div>
             </div>
-            <div class="product__comments-container">
+            <div class="product__comments-container" id="see-comments">
 
             </div>
         </div>
