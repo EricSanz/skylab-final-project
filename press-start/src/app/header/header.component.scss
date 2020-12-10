@@ -1,3 +1,4 @@
+* {font-family: Verdana, Geneva, Tahoma, sans-serif;}
 .header {
     position: fixed;
     top: 0;
@@ -11,7 +12,7 @@
         display: flex;
         justify-content: space-around;
         align-items: center;
-        img {
+        .logo-press-start {
             cursor: pointer;
             outline: none;
             padding-top: 5px;
@@ -101,6 +102,21 @@
                 }
                 p {
                     margin-top: 5px;
+                }
+            }
+            .logged-in {
+                cursor: pointer;
+                display: flex;
+                flex-direction: column;
+                margin-top: 10px;
+                align-items: center;
+                .user-photo {
+                    height: 35px;
+                    width: 35px;
+                    border-radius: 50%;
+                }
+                .user-name {
+                    margin-top: 3px;
                 }
             }
             .news-articles-icon {

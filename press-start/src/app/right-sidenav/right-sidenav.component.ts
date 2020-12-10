@@ -1,4 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { Router } from '@angular/router';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-right-sidenav',
@@ -7,7 +10,21 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class RightSidenavComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    public authService: AuthService,
+    public auth: AngularFireAuth,
+    private router: Router) { }
+
+  email: string;
+  password: string;
+
+  async login() {
+    this.authService.loginWithGoogle();
+  }
+
+  logout() {
+    this.authService.logOut();
+  }
 
   @Input() public fieldTextType: boolean = false;
   @Input() public toggleSidenav: boolean = false;

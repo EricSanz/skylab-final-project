@@ -1,7 +1,7 @@
 export interface User {
     uid: string,
-    displayName: string,
+    displayName?: string,
     email: string,
-    userPhoto: string,
-    favorites: string[]
+    photoUrl?: string,
+    favorites?: string[]
 }
