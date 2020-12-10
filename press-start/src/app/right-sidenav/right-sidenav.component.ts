@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
+import { userCategories } from './user-categories';
 
 @Component({
   selector: 'app-right-sidenav',
@@ -9,6 +10,8 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./right-sidenav.component.scss']
 })
 export class RightSidenavComponent implements OnInit {
+
+  userCategories = userCategories;
 
   constructor(
     public authService: AuthService,

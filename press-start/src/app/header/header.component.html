@@ -23,19 +23,19 @@
         </div>
         <img class="logo-press-start" routerLink="home" src="https://trello-attachments.s3.amazonaws.com/5fbbd84e8e0ef93bcce1ac96/260x166/8f0fe204a80e710a59b710a40cde07d1/press-start-16-yellow.png" alt="logo">
         <div class="header__right">
-            <!-- <div class="signin-icon">
-                <fa-icon [icon]="['fas', 'user']" (click)="child2.toggleRightSidenav()"></fa-icon>
-                    <p>Sign in</p>
-            </div> -->
             <div *ngIf="auth.user | async as user; else notlogged">
                 <div class="logged-in" (click)="child2.toggleRightSidenav()">
-                    <img class="user-photo" src="{{user.photoURL}}">
-                    <p class="user-name">{{user.displayName}}</p>
+                    <fa-icon class="out-icon" [icon]="['fas', 'sign-out-alt']"></fa-icon>
+                    <!-- <img class="user-photo" src="{{user.photoURL}}"> -->
+                    <!-- <p class="user-name">{{user.displayName}}</p> -->
+                    <p class="sign-out">Sign Out</p>
                 </div>
             </div>
-            <ng-template #notlogged class="signin-icon">
-                <fa-icon [icon]="['fas', 'user']" (click)="child2.toggleRightSidenav()"></fa-icon>
-                <p>Sign in</p>
+            <ng-template #notlogged>
+                <div class="signin-icon">
+                    <fa-icon [icon]="['fas', 'sign-in-alt']" (click)="child2.toggleRightSidenav()"></fa-icon>
+                    <p>Sign in</p>
+                </div>
             </ng-template>
             <div class="news-articles-icon">
                 <fa-icon [icon]="['fas', 'newspaper']" routerLink="articles-news"></fa-icon>

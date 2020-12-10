@@ -4,6 +4,7 @@ import { AccesoriesComponent } from './accesories/accesories.component';
 import { ArticlesNewsComponent } from './articles-news/articles-news.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import { ComingsoonComponent } from './comingsoon/comingsoon.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 import { DetailComponent } from './detail/detail.component';
 import { HomeComponent } from './home/home.component';
 import { InformationComponent } from './information/information.component';
@@ -33,6 +34,7 @@ const routes: Routes = [
   { path: 'merchandising', component: MerchandisingComponent },
   { path: 'accesories', component: AccesoriesComponent },
   { path: 'information', component: InformationComponent },
+  { path: 'dashboard', component: DashboardComponent},
   { path: '**', redirectTo: '/home', pathMatch: 'full'}
 ];
 

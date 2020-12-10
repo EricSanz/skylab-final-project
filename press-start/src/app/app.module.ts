@@ -8,7 +8,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { faPlaystation, faXbox, faTwitter, faFacebook, faInstagram, faGoogle, faCcVisa, faCcMastercard, faCcPaypal } from '@fortawesome/free-brands-svg-icons';
-import { faNewspaper, faSearch, faCalendar, faCalendarAlt, faUsers, faUser, faShippingFast, faWindowClose, faTimes, faTimesCircle, faAddressBook, faComment, faCommentAlt, faComments, faShoppingCart, faMoneyBillWave, faBars, faCaretDown, faCaretRight, faCaretLeft, faCaretUp, faArrowAltCircleLeft, faEnvelope, faEye, faEyeSlash, faBoxes, faCartPlus, faHeart } from '@fortawesome/free-solid-svg-icons';
+import { faNewspaper, faSearch, faCalendar, faCalendarAlt, faUsers, faUser, faShippingFast, faWindowClose, faTimes, faTimesCircle, faAddressBook, faComment, faCommentAlt, faComments, faShoppingCart, faMoneyBillWave, faBars, faCaretDown, faCaretRight, faCaretLeft, faCaretUp, faArrowAltCircleLeft, faEnvelope, faEye, faEyeSlash, faBoxes, faCartPlus, faHeart, faSignInAlt, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -35,6 +35,7 @@ import { ListComponent } from './list/list.component';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 const firebaseConfig = {
     apiKey: "AIzaSyCclbtjI5Uw49dlp47nfTpoLF8HMQxM1RA",
@@ -69,6 +70,7 @@ const firebaseConfig = {
     RightSidenavComponent,
     DetailComponent,
     ListComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,
@@ -93,6 +95,6 @@ export class AppModule {
       library.addIcons(faAddressBook, faCalendar, faCalendarAlt, faCcMastercard, faCcPaypal, faCcVisa, faComment,
         faCommentAlt, faComments, faFacebook, faInstagram, faMoneyBillWave, faNewspaper, faPlaystation, faSearch,
         faShippingFast, faShoppingCart, faHeart, faCartPlus, faBoxes, faTimes, faTimesCircle, faGoogle, faTwitter, faUsers, faWindowClose, faXbox, faCaretUp,
-        faCaretRight, faCaretLeft, faCaretDown, faBars, faUser, faArrowAltCircleLeft, faEnvelope, faEye, faEyeSlash);
+        faCaretRight, faCaretLeft, faCaretDown, faBars, faSignInAlt, faSignOutAlt, faUser, faArrowAltCircleLeft, faEnvelope, faEye, faEyeSlash);
     }
 }
