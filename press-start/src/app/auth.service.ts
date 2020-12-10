@@ -24,7 +24,7 @@ export class AuthService {
     })
   }
 
-  constructor( public http: HttpClient, public auth: AngularFireAuth, private router: Router) { }
+  constructor( public http: HttpClient, public afAuth: AngularFireAuth, private router: Router) { }
 
   handleError (operation = 'operation', result?: any) {
     return (error: any): Observable<any> => {
@@ -35,26 +35,26 @@ export class AuthService {
   }
 
   async loginWithGoogle() {
-    this.fireUser = await this.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
+    this.fireUser = await this.afAuth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
     localStorage.user = JSON.stringify(this.fireUser)
     this.modifyUser(this.fireUser.user).subscribe();
     return this.fireUser.user;
   }
 
   async logOut(){
-    await this.auth.signOut();
+    await this.afAuth.signOut();
     if (this.router.url === '/user') {
       this.router.navigate(['/home'])
     }  
   }
 
-  async login(email: string, password: string) {
-    this.fireUser.auth().signInWithEmailAndPassword(email, password);
+  async SignUp(email: string, password: string) {
+    this.fireUser.afAuth.auth.signInWithEmailAndPassword(email, password);
     this.modifyUser(this.fireUser.user).subscribe();
   }
 
-  register(email: string, password: string) {
-    this.fireUser = this.auth.createUserWithEmailAndPassword(email, password)
+  SignIn(email: string, password: string) {
+    this.fireUser.afAuth.auth.createUserWithEmailAndPassword(email, password)
     this.modifyUser(this.fireUser.user).subscribe();
   }
 

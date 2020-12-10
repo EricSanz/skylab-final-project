@@ -25,16 +25,16 @@
             <div class="signIn-signUp">
                 <p>Sign In | Sign Up</p>
                 <div class="email-container">
-                    <input type="text" placeholder="E-mail">
+                    <input type="text" placeholder="E-mail" #userEmail required>
                     <fa-icon [icon]="['fas', 'envelope']"></fa-icon>
                 </div>
                 <div class="password-container">
-                    <input [type]="fieldTextType ? 'text' : 'password'" class="password-control" placeholder="Password">
+                    <input [type]="fieldTextType ? 'text' : 'password'" class="password-control" placeholder="Password" #userPassword required>
                     <fa-icon id="eye" [icon]="['fas', 'eye']" (click)="toggleFieldTextType()"></fa-icon>
                     <fa-icon id="eye-slash" [icon]="['fas', 'eye-slash']" (click)="toggleFieldTextType()"></fa-icon>
                 </div>
                 <p class="forgot-password">Forgot Your Password?</p>
-                <button>Send</button>
+                <button (click)="signUpWithEmailPassword(userEmail.value, userPassword.value)">Send</button>
             </div>
             <div class="other-signIn-methods">
                 <p class="title-methods">Other sign In Methods:</p>

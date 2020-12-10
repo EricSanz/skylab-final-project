@@ -32,13 +32,18 @@
         <div class="product__details-right">
             <div class="product__buy">
                 <div class="price">
-                    <div *ngIf="videogame.sales; else elseBlock"  class="notstrikeout">{{videogame.price | currency: 'EUR'}}</div>
+                    <div *ngIf="videogame.sales; else elseBlock"  class="strikeout">
+                        <div class="onsale-container">
+                            <p class="onsale">On Sale</p>
+                        </div>
+                        {{videogame.price | currency: 'EUR'}}
+                    </div>
+                    <span class="notstrikeout">{{videogame.salePrice | currency: 'EUR'}}</span>
                     <ng-template #elseBlock >
-                        <p class="strikeout">
+                        <p class="notstrikeout">
                             {{videogame.price | currency: 'EUR'}}
                         </p>
                     </ng-template>
-                    <span class="notstrikeout">{{videogame.salePrice | currency: 'EUR'}}</span>
                     <button class="add-cart">
                         <fa-icon [icon]="['fas', 'cart-plus']"></fa-icon>
                         <p class="add-cart-label">Add to Cart</p>
@@ -47,7 +52,7 @@
                 <div class="info__options-container">
                     <button class="info__options-button" id="description-button" (click)="seeDescription()">Description</button>
                     <button class="info__options-button" id="picture-button" (click)="seePictures()">Pictures</button>
-                    <button class="info__options-button">Comments</button>
+                    <!-- <button class="info__options-button">Comments</button> -->
                 </div>
                 <div *ngIf="videogame.stock; else elseColor" class="stock-green">
                         <fa-icon [icon]="['fas', 'boxes']"></fa-icon>
@@ -60,7 +65,7 @@
                     </div>
                 </ng-template>
             </div>
-            <div class="product__description-container" id="see-description"> 
+            <div class="product__description-container" id="see-description">
                 <h1>{{videogame.name}}</h1>
                 <div  class="product__description" *ngFor="let item of videogame.description">
                     <p class="description-titles">{{item.title}}</p>
@@ -77,9 +82,9 @@
                     <img class="images-resolution" [src]="videogame.images[3]">
                 </div>
             </div>
-            <div class="product__comments-container" id="see-comments">
+            <!-- <div class="product__comments-container" id="see-comments">
 
-            </div>
+            </div> -->
         </div>
     </div>
 </div>
