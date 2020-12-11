@@ -1,0 +1,116 @@
+[
+    {
+        "name": "Marvel's Spider-Man: Miles Morales",
+        "genre": ["Action", "Adventure"],
+        "developer": "Insomniac Games",
+        "images": ["https://static.xtralife.com/conversions/MYC3-X16P264592-fullhd_w1920_h1080_q75-milesmorales-stealth-ps5-legal-1592497178.png",
+            "https://static.xtralife.com/conversions/Y3C1-65JX264591-fullhd_w1920_h1080_q75-milesmorales-hero-ps5-legal-1592497177.png",
+            "https://static.xtralife.com/conversions/1MCQ-2RZ9264593-fullhd_w1920_h1080_q75-milesmorales-swing-ps5-legal-1592497178.png"],
+        "description": [{
+                "title": "The Rise of Miles Morales",
+                "text": ["In the latest adventure in the Marvel’s Spider-Man universe, teenager Miles Morales is adjusting to his new home while following in the footsteps of his mentor, Peter Parker, as a new Spider-Man. But when a fierce power struggle threatens to destroy his new home, the aspiring hero realizes that with great power, there must also come great responsibility. To save all of Marvel’s New York, Miles must take up the mantle of Spider-Man and own it.",
+                "Miles Morales discovers explosive powers that set him apart from his mentor, Peter Parker. Master his unique, bio-electric venom blast attacks and covert camouflage power alongside spectacular web-slinging acrobatics, gadgets and skills."]
+            }, {
+                "title": "A War for Power",
+                "text": ["A fierce war for control of Marvel’s New York has broken out between a devious energy corporation and a high-tech criminal army. With his new home at the heart of the battle, Miles learns the cost of becoming a hero as he decides what he’s willing to sacrifice for the greater good."]
+            }, {
+                "title": "A Vibrant New Home",
+                "text": ["Traverse the snowy streets of his new, vibrant and bustling neighbourhood as Miles searches for a sense of belonging. When the lines blur between his personal and crime-fighting lives, he discovers who he can trust, and what it feels like to truly be home."]
+            }],
+        "pegi": "https://pegi.info/sites/default/files/styles/medium/public/2017-03/pegi16.png?itok=GyBvYeoU",
+        "price": "54.95",
+        "salePrice": "",
+        "stock": true,
+        "release": "12-11-2020",
+        "comments": ["nananna", "lolololo"],
+        "sales": false,
+        "platform": {
+            "name": ["PlayStation 4"],
+            "cover": ["https://static.xtralife.com/conversions/3MC1-4R42270624-fullhd_w1920_h1080_q75-ps4spidermanmilesmorales-1600333658.png"]
+            },
+        "edition": false,
+        "nameEdition": ""
+    },
+    {
+        "name": "Ghost of Tsushima",
+        "genre": ["Action", "Adventure"],
+        "developer": "Sucker Punch",
+        "images": ["https://static.xtralife.com/conversions/MYC3-X16P264592-fullhd_w1920_h1080_q75-milesmorales-stealth-ps5-legal-1592497178.png",
+            "https://static.xtralife.com/conversions/Y3C1-65JX264591-fullhd_w1920_h1080_q75-milesmorales-hero-ps5-legal-1592497177.png",
+            "https://static.xtralife.com/conversions/1MCQ-2RZ9264593-fullhd_w1920_h1080_q75-milesmorales-swing-ps5-legal-1592497178.png"],
+        "description": [{
+                "title": "A storm is coming",
+                "text": ["In the late 13th century, the Mongol empire has laid waste to entire nations along their campaign to conquer the East. Tsushima Island is all that stands between mainland Japan and a massive Mongol invasion fleet led by the ruthless and cunning general, Khotun Khan.",
+                "As the island burns in the wake of the first wave of the Mongol assault, samurai warrior Jin Sakai stands as one of the last surviving members of his clan. He is resolved to do whatever it takes, at any cost, to protect his people and reclaim his home. He must set aside the traditions that have shaped him as a warrior to forge a new path, the path of the Ghost, and wage an unconventional war for the freedom of Tsushima."]
+            }, {
+                "title": "In war-torn Tsushima, ancient beauty endures",
+                "text": ["Venture beyond the battlefield to experience feudal Japan like never before. In this open-world action adventure, you’ll roam vast countrysides and expansive terrain to encounter rich characters, discover ancient landmarks, and uncover the hidden beauty of Tsushima.",
+                "Explore meticulously-crafted regions showcasing diversity of life on the sprawling island—from billowing fields and tranquil shrines to ancient forests, villages and stark mountainscapes. Find peace in the quiet moments of natural harmony and solace in the moments you’ll share with the people you help along the way."]
+            }, {
+                "title": "The rise of the Ghost",
+                "text": ["Jin was raised and trained in the ways of the samurai. When the Mongols handily defeat the samurai forces, Jin’s world is shattered. He is faced with the most difficult decision of his life: honor the tradition and customs of his samurai upbringing and maintain a fight he cannot win, or deviate from his samurai path to protect the island and its people by any means necessary.",
+                "In his quest to reclaim Tsushima, Jin must seek the guidance and support of old friends and new unlikely allies. He must break away from tradition, become a new kind of warrior, and protect what’s left of his home at all costs."]
+            }, {
+                "title": "Mud, blood and steel",
+                "text": ["The Mongol enemy is unpredictable and formidable in warfare and weaponry. Get the upper hand by adapting Jin’s skills and learning new tactics to defend the island and protect the people of Tsushima.",
+                "Challenge opponents head-on in close quarters with your katana for a unique immersive samurai combat experience. Master the bow to eliminate distant threats with lethal precision. Develop stealth and deception tactics to disorient and ambush enemies with surprise attacks.",
+                "An adaptive landscape and organic approach to combat makes Tsushima the perfect playground for mixing and matching skills, weapons, and tactics to find the perfect combat blend for your play style. As Jin’s story unfolds, versatility and creativity will become your greatest weapons."]
+            }],
+        "pegi": "https://pegi.info/sites/default/files/styles/medium/public/2017-03/pegi18.png?itok=2iF_eHO6",
+        "price": "59.95",
+        "salePrice": "",
+        "stock": true,
+        "release": "17-07-2020",
+        "comments": ["nananna", "lolololo"],
+        "sales": false,
+        "platform": {
+            "name": ["PlayStation 4"],
+            "cover": ["https://static.xtralife.com/conversions/D9C5-5JX9251401-fullhd_w1920_h1080_q75-ps4ghostoftsushima-1580114527.png"]
+            },
+        "edition": false,
+        "nameEdition": ""
+    },
+    {
+        "name": "Watch Dogs Legion",
+        "genre": ["Action", "Adventure"],
+        "developer": "Ubisoft Toronto",
+        "images": ["https://static.xtralife.com/conversions/NMCX-88Z0234338-fullhd_w1920_h1080_q75-2orwell-screenshots-1920x1080-open-world-sp-1560184592.png",
+            "https://static.xtralife.com/conversions/QJC9-XXKM234339-fullhd_w1920_h1080_q75-4orwell-screenshots-1920x1080-city-sp-1560184592.png",
+            "https://static.xtralife.com/conversions/WJCQ-YYZK234335-fullhd_w1920_h1080_q75-3orwell-screenshots-1920x1080-play-es-1560184592.png",
+            "https://static.xtralife.com/conversions/60CY-0076234336-fullhd_w1920_h1080_q75-5orwell-screenshots-1920x1080-customize-es-1560184592.png",
+            "https://static.xtralife.com/conversions/4MCP-MM2W234337-fullhd_w1920_h1080_q75-6orwell-screenshots-1920x1080-hacking-sp-1560184592.png"],
+        "description": [{
+                "title": "PLAY AS ANYONE",
+                "text": ["Recruit anyone from the entire population of London into your resistance: from an MI6 agent to a tough bareknuckle fighter, from a brilliant hacker to a getaway driver, from a football hooligan to an inconspicuous old lady, everyone has a unique backstory, personality, and skillset that should be used in unique situations. Anyone you see can join your team.",
+                "Play the game the way you want. Build a team with a huge range of characters to choose from, all bringing their own unique abilities. Takedown and arrest enemies as a police officer, chase down enemies in a fully loaded superspy car with armed rockets and cloaking device, and command robotic bees with your beekeeper. Customise your Legion with enhanced gadgets, unique outfits and iconic masks."]
+            }, {
+                "title": "AN IMMERSIVE STORY",
+                "text": ["After a mysterious assailant initiates devastating terror attacks on London, DedSec, a secret underground resistance who is being blamed for the attacks and is on the brink of annihilation, needs your help.",
+                "Your mission is to rebuild DedSec to fight back against those who wish to keep London oppressed. Some enemies are more obvious than others, such as the likes of Big Brother Nigel Cass, head of the corrupt private military corporation, Albion. A genius sociopath, Nigel has his own interesting way of keeping London safe, which may or may not include decimating Londoners. There’s also Mary Kelley, head of a criminal clan who has united all gangs in the city. She needs you out of the way so she can continue her lucrative businesses like human trafficking.",
+                "You will continue to meet colourful characters along the way – both villains and allies – in your fight for London."]
+            }, {
+                "title": "HACKING IS YOUR WEAPON",
+                "text": ["Weaponise London’s tech infrastructure, and unleash DedSec’s mastery of technology: hijack armed combat drones, reconstruct past events using augmented reality to discover who is behind the terror attacks, and hack your way through the most advanced security systems. Upgrade and deploy tech gadgets such as the Stealth Cloak, the Spiderbot, a Micro-Missile Launcher, and the powerful Electro Fist in a brand new melee system."]
+            }, {
+                "title": "LIBERATE AN OPEN WORLD LONDON",
+                "text": ["Explore a massive urban open world and fight to liberate London’s many famous landmarks—including Trafalgar Square, Big Ben, Tower Bridge, Camden, Piccadilly Circus, or the London Eye—and engage in side activities like bareknuckle boxing, darts, freestyle football, illegal courier contracts or street art."]
+            }, {
+                "title": "TEAM UP WITH FRIENDS",
+                "text": ["Join forces with up to three friends in online multiplayer as you freely explore London together or take on special co-op missions, and unique game modes. Enjoy free regular updates adding new online content, rewards and themed events."]
+            }],
+        "pegi": "https://pegi.info/sites/default/files/styles/medium/public/2017-03/pegi18.png?itok=2iF_eHO6",
+        "price": "59.95",
+        "salePrice": "34.95",
+        "stock": true,
+        "release": "17-07-2020",
+        "comments": ["nananna", "lolololo"],
+        "sales": true,
+        "platform": {
+            "name": ["PlayStation 4", "Xbox One"],
+            "cover": ["https://static.xtralife.com/conversions/WJCQ-8DK1266014-fullhd_w1920_h1080_q75-ps4watchdogslegion-1594629460.png",
+            "https://static.xtralife.com/conversions/RJC5-8Y42266009-fullhd_w1920_h1080_q75-xboxwatchdogslegion-1594628663.png"]
+            },
+        "edition": false,
+        "nameEdition": ""
+    }
+]

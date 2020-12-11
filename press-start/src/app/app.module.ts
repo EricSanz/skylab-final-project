@@ -36,6 +36,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { MatCarouselModule } from '@ngmodule/material-carousel';
 
 const firebaseConfig = {
     apiKey: "AIzaSyCclbtjI5Uw49dlp47nfTpoLF8HMQxM1RA",
@@ -86,6 +87,7 @@ const firebaseConfig = {
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFirestoreModule,
     AngularFireAuthModule,
+    MatCarouselModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

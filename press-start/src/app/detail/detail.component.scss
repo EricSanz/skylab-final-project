@@ -18,7 +18,7 @@
                     .product-title {
                         margin-top: 20px;
                         margin-left: 30px;
-                        font-size: 25px;
+                        font-size: 20px;
                         font-weight: bold;
                     }
                     .product-platform {
@@ -35,11 +35,10 @@
                     }
                 }
                 .title__right-container {
-                    // padding-left: 20px;
-                    padding-right: 30px;
+                    padding-right: 50px;
                     padding-top: 20px;
                     .add__favourites-icon {
-                        font-size: 30px;
+                        font-size: 40px;
                         cursor: pointer;
                     }
                     .add__favourites-icon:hover {
@@ -48,68 +47,9 @@
                 }
             }
             .product-cover {
+                padding-top: 40px;
                 width: 400px;
                 height: 500px;
-            }
-            .product-general-info {
-                display: flex;
-                justify-content: space-around;
-                align-items: center;
-                border-top: 2px solid #161616;
-                padding-top: 10px;
-                padding-left: 30px;
-                padding-right: 30px;
-                background: #f0da14;
-                .general-info-container {
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: space-around;
-                    margin-right: 30px;
-                    width: 100%;
-                    .genre-container {
-                        display: flex;
-                        justify-content: space-between;
-                        background: white;
-                        padding: 5px;
-                        padding-right: 10px;
-                        padding-left: 10px;
-                        height: 20px;
-                        border-bottom: 2px solid #161616;
-                        .genre-title {
-                            font-weight: bold;
-                        }
-                        .genre {
-                            margin-left: 10px;
-                            font-weight: bold;
-                        }
-                    }
-                    .developer-container {
-                        display: flex;
-                        justify-content: space-between;
-                        background: white;
-                        padding: 5px;
-                        padding-right: 10px;
-                        padding-left: 10px;
-                        height: 20px;
-                        margin-top: 5px;
-                        margin-bottom: 10px;
-                        border-bottom: 2px solid #161616;
-                        .developer-title {
-                            font-weight: bold;
-                        }
-                        .developer {
-                            margin-left: 10px;
-                            font-weight: bold;
-                        }
-                    }
-                }
-                .pegi-container {
-                    margin-bottom: 5px;
-                    .pegi-image {
-                        width: 70px;
-                        height: 80px;
-                    }
-                }
             }
         }
         .product__details-right {
@@ -146,9 +86,11 @@
                     margin-left: 30px;
                     margin-top: 10px;
                     display: flex;
+                    justify-content: flex-end;
                     flex-direction: column;
                     align-items: center;
                     margin-right: 30px;
+                    color: red;
                     .stock-red{
                         margin-top: 5px;
                         font-size: 25px;
@@ -260,16 +202,76 @@
                 height: 600px;
                 overflow: auto;
                 .titlegame-container {
-                    margin-top: 30px;
-                    margin-bottom: 20px;
+                    margin-top: 20px;
+                    padding-top: 30px;
+                    padding-bottom: 20px;
+                    margin-bottom: 30px;
                     width: 100%;
                     height: 50px;
                     background: #f0da14;
+                    display: inline-flex;
+                    justify-content: space-between;
+                    .product-general-info {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        .general-info-container {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-around;
+                            margin-right: 30px;
+                            // width: 100%;
+                            .genre-container {
+                                display: flex;
+                                justify-content: space-between;
+                                background: white;
+                                padding: 5px;
+                                padding-right: 10px;
+                                padding-left: 10px;
+                                height: 20px;
+                                border-bottom: 2px solid #161616;
+                                .genre-title {
+                                    font-weight: bold;
+                                }
+                                .genre {
+                                    margin-left: 10px;
+                                    font-weight: bold;
+                                }
+                            }
+                            .developer-container {
+                                display: flex;
+                                justify-content: space-between;
+                                background: white;
+                                padding: 5px;
+                                padding-right: 10px;
+                                padding-left: 10px;
+                                height: 20px;
+                                margin-top: 5px;
+                                margin-bottom: 10px;
+                                border-bottom: 2px solid #161616;
+                                .developer-title {
+                                    font-weight: bold;
+                                }
+                                .developer {
+                                    margin-left: 10px;
+                                    font-weight: bold;
+                                }
+                            }
+                        }
+                        .pegi-container {
+                            margin-right: 30px;
+                            margin-bottom: 5px;
+                            .pegi-image {
+                                width: 70px;
+                                height: 85px;
+                            }
+                        }
+                    }
                     h1 {
                         padding-left: 30px;
-                        padding-top: 10px;
+                        padding-top: 5px;
                         font-weight: bold;
-                        font-size: 30px;
+                        font-size: 35px;
                     }
                 }
                 .product__description {
@@ -309,11 +311,10 @@
                 padding: 40px;
                 margin-left: 5px;
                 .images-container {
-                    display: flex;
-                    flex-wrap: wrap;
+                    display: inline-flex;
                     .images-resolution {
                         margin: 12.5px;
-                        width: 425px;
+                        width: 420px;
                         height: 225px;
                     }
                 }

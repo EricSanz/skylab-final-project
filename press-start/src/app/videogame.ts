@@ -3,8 +3,9 @@ import { Platform } from './plataforma';
 import { Complement } from './complement';
 
 export interface Videogame {
-    id: string,
+    _id: string,
     name: string,
+    shortName: string,
     genre: string[],
     developer: string,
     images: string[],

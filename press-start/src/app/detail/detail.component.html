@@ -3,7 +3,12 @@
         <div class="product__details-left">
             <div class="product__title-container">
                 <div class="title__left-container">
-                    <p class="product-title">{{videogame.name}}</p>
+                    <div *ngIf="videogame.shortName; else largeName">
+                        <p class="product-title">{{videogame.shortName}}</p>
+                    </div>
+                    <ng-template #largeName>
+                        <p class="product-title">{{videogame.name}}</p>
+                    </ng-template>
                     <select class="product-platform" name="platform-select" (change)="handleOnChange($event)">
                         <option class="product-platform" *ngFor="let name of videogame.platform.name">{{name}}</option>
                     </select>
@@ -13,21 +18,6 @@
                 </div>
             </div>
             <img class="product-cover" id="cover-image" src="{{videogame.platform.cover[coverIndex]}}">
-            <div class="product-general-info">
-                <div class="general-info-container">
-                    <div class="genre-container">
-                        <p class="genre-title">Genres:</p>
-                        <p class="genre" *ngFor="let genre of videogame.genre">{{genre}}</p>
-                    </div>
-                    <div class="developer-container">
-                        <p class="developer-title">Developer:</p>
-                        <p class="developer">{{videogame.developer}}</p>
-                    </div>
-                </div>
-                <div class="pegi-container">
-                    <img class="pegi-image" src="{{videogame.pegi}}">
-                </div>
-            </div>
         </div>
         <div class="product__details-right">
             <div class="product__buy">
@@ -61,13 +51,28 @@
                 <ng-template #elseColor>
                     <div class="not-stock">
                         <fa-icon class="stock-red" [icon]="['fas', 'boxes']"></fa-icon>
-                        <p class="stock">Stock not available</p>
+                        <p class="not-stock">Stock not available</p>
                     </div>
                 </ng-template>
             </div>
             <div class="product__description-container" id="see-description">
                 <div class="titlegame-container">
                     <h1>{{videogame.name}}</h1>
+                    <div class="product-general-info">
+                        <div class="general-info-container">
+                            <div class="genre-container">
+                                <p class="genre-title">Genres:</p>
+                                <p class="genre" *ngFor="let genre of videogame.genre">{{genre}}</p>
+                            </div>
+                            <div class="developer-container">
+                                <p class="developer-title">Developer:</p>
+                                <p class="developer">{{videogame.developer}}</p>
+                            </div>
+                        </div>
+                        <div class="pegi-container">
+                            <img class="pegi-image" src="{{videogame.pegi}}">
+                        </div>
+                    </div>
                 </div>
                 <div  class="product__description" *ngFor="let item of videogame.description">
                     <p class="description-titles">{{item.title}}</p>
@@ -86,13 +91,8 @@
                 </div>
             </div>
             <div class="product__images-container" id="see-pictures">
-                <div class="images-container">
-                    <img class="images-resolution" [src]="videogame.images[0]">
-                    <img class="images-resolution" [src]="videogame.images[1]">
-                    <img class="images-resolution" [src]="videogame.images[2]">
-                    <img class="images-resolution" [src]="videogame.images[3]">
-                    <img class="images-resolution" [src]="videogame.images[4]">
-                    <img class="images-resolution" [src]="videogame.images[5]">
+                <div class="images-container" *ngFor="let image of videogame.images">
+                    <img class="images-resolution" [src]="image">
                 </div>
             </div>
             <!-- <div class="product__comments-container" id="see-comments">
