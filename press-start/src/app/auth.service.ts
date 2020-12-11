@@ -36,9 +36,9 @@ export class AuthService {
 
   async loginWithGoogle() {
     this.fireUser = await this.afAuth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
-    localStorage.user = JSON.stringify(this.fireUser)
+    // localStorage.user = JSON.stringify(this.fireUser)
     this.modifyUser(this.fireUser.user).subscribe();
-    return this.fireUser.user;
+    // return this.fireUser.user;
   }
 
   async logOut(){

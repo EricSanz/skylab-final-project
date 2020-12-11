@@ -66,11 +66,22 @@
                 </ng-template>
             </div>
             <div class="product__description-container" id="see-description">
-                <h1>{{videogame.name}}</h1>
+                <div class="titlegame-container">
+                    <h1>{{videogame.name}}</h1>
+                </div>
                 <div  class="product__description" *ngFor="let item of videogame.description">
                     <p class="description-titles">{{item.title}}</p>
                     <div class="description-text" *ngFor="let text of item.text">
                         {{text}}
+                    </div>
+                </div>
+                <div class="videogame-edition" *ngIf="videogame.edition">
+                    <p class="edition-title">{{videogame.nameEdition}}</p>
+                    <div class="edition-items" *ngFor="let complement of videogame.complement">
+                        <ul class="complement-title">{{complement.title}}</ul>
+                        <li class="complement-content" *ngFor="let content of complement.content">
+                            {{content}}
+                        </li>
                     </div>
                 </div>
             </div>
@@ -80,6 +91,8 @@
                     <img class="images-resolution" [src]="videogame.images[1]">
                     <img class="images-resolution" [src]="videogame.images[2]">
                     <img class="images-resolution" [src]="videogame.images[3]">
+                    <img class="images-resolution" [src]="videogame.images[4]">
+                    <img class="images-resolution" [src]="videogame.images[5]">
                 </div>
             </div>
             <!-- <div class="product__comments-container" id="see-comments">

@@ -29,7 +29,6 @@ export class DetailComponent {
   ) { }
 
   handleOnChange(event: any): void {
-    console.log(this.videogame)
     switch (event.target.value) {
       case 'PlayStation 4':
         this.coverIndex = 0;

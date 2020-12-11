@@ -1,5 +1,6 @@
 import { Description } from './description';
 import { Platform } from './plataforma';
+import { Complement } from './complement';
 
 export interface Videogame {
     id: string,
@@ -16,4 +17,7 @@ export interface Videogame {
     platform: Platform,
     description: Description[],
     sales: boolean,
+    edition: boolean,
+    complement: Complement[],
+    nameEdition: string,
 }
