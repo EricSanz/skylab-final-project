@@ -21,4 +21,5 @@ export interface Videogame {
     edition: boolean,
     complement: Complement[],
     nameEdition: string,
+    playStation: boolean,
 }

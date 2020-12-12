@@ -9,7 +9,6 @@
             height: 250px !important;
             position: relative !important;
             background-position: top !important;
-            // padding: 0 !important;
             .carousel-slide-content {
                 position: relative !important;
             }
@@ -30,6 +29,7 @@
 .videogame__list-section {
     padding-left: 80px;
     padding-right: 80px;
+    padding-bottom: 40px;
     display: flex;
     flex-wrap: wrap;
     .videogame-section {
@@ -44,7 +44,7 @@
             text-align: center;
             .add__favourites-icon {
                 font-size: 24px;
-                padding-left: 150px;
+                margin-left: 150px;
             }
             .add__favourites-icon:hover {
                 color: red;
@@ -141,10 +141,6 @@
             .price {
                 background: white;
                 height: 82px;
-                // padding-bottom: -50px;
-            }
-            .strikeout {
-                // padding-bottom: -30px;
             }
         }
     }

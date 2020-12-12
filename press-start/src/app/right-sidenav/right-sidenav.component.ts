@@ -18,9 +18,6 @@ export class RightSidenavComponent implements OnInit {
     public auth: AngularFireAuth,
     private router: Router) { }
 
-  // email: string;
-  // password: string;
-
   signUpWithEmailPassword(email: string, password: string ) {
     this.authService.SignUp(email, password)
   }

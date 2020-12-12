@@ -4,20 +4,8 @@ export const categories: Array<any> = [
     route: '',
   },
   {
-    category: 'Calendar',
-    route: 'calendar',
-  },
-  {
-    category: 'New Releases',
-    route: 'new-releases',
-  },
-  {
-    category: 'Coming Soon',
-    route: 'comingsoon',
-  },
-  {
-    category: 'Sales',
-    route: 'sales',
+    category: 'All Videogames',
+    route: 'products',
   },
   {
     category: 'PlayStation',
@@ -30,6 +18,18 @@ export const categories: Array<any> = [
   {
     category: 'Nintendo',
     route: 'nintendo',
+  },
+  {
+    category: 'New Releases',
+    route: 'new-releases',
+  },
+  {
+    category: 'Coming Soon',
+    route: 'comingsoon',
+  },
+  {
+    category: 'Sales',
+    route: 'sales',
   },
   {
     category: 'Merchandising',
