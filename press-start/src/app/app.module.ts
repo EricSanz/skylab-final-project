@@ -87,7 +87,7 @@ const firebaseConfig = {
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFirestoreModule,
     AngularFireAuthModule,
-    MatCarouselModule,
+    MatCarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent],
