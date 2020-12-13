@@ -3,6 +3,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 import { userCategories } from './user-categories';
+import { UserLoginStateService } from '../user-login-state.service';
 
 @Component({
   selector: 'app-right-sidenav',
@@ -16,6 +17,7 @@ export class RightSidenavComponent implements OnInit {
   constructor(
     public authService: AuthService,
     public auth: AngularFireAuth,
+    public loginstate: UserLoginStateService,
     private router: Router) { }
 
   signUpWithEmailPassword(email: string, password: string ) {
@@ -28,6 +30,7 @@ export class RightSidenavComponent implements OnInit {
 
   logout() {
     this.authService.logOut();
+    this.loginstate.removeUser();
   }
 
   @Input() public fieldTextType: boolean = false;

@@ -3,6 +3,10 @@ import { Videogame } from '../videogame';
 import { ActivatedRoute } from '@angular/router';
 import { VideogameService } from '../videogame.service';
 import { Observable } from 'rxjs';
+import { AuthService } from '../auth.service';
+import { User } from '../user';
+import { UserLoginStateService } from '../user-login-state.service';
+
 
 @Component({
   selector: 'app-detail',
@@ -10,23 +14,37 @@ import { Observable } from 'rxjs';
   styleUrls: ['./detail.component.scss']
 })
 export class DetailComponent {
+  // user: any;
+  // user$: Observable<User>
 
   get videogameId () {
     return this.route.snapshot.paramMap.get('videogameId')!;
   }
   
   videogame$: Observable<Videogame> = this.videogameService.getVideogame(this.videogameId);
-  videogame: any = this.videogameService.getVideogame(this.videogameId)
-  .subscribe((info: Videogame) => {this.videogame = info })
+  // videogame: any = this.videogameService.getVideogame(this.videogameId)
+  // .subscribe((info: Videogame) => {this.videogame = info })
+  // user$: Observable<User> = this.authService.getUser(this.authService.fireUser.user.displayName);
+  user = this.userLoginState.getUser() !== null ? JSON.parse(localStorage.getItem('user')) : null;
 
+
+  favoriteVideogame: any;
+  following: boolean = false;
+  flag: boolean;
   coverIndex:number = 0;
 
   toggleGeneral: boolean = false;
 
   constructor(
     public route: ActivatedRoute,
-    public videogameService: VideogameService
-  ) { }
+    public videogameService: VideogameService,
+    public authService: AuthService,
+    public userLoginState: UserLoginStateService,
+  ) {
+    this.userLoginState.getValue().subscribe((value: boolean) => {
+      this.flag = value
+    })
+   }
 
   handleOnChange(event: any): void {
     switch (event.target.value) {
@@ -77,4 +95,40 @@ export class DetailComponent {
     this.toggleGeneral ? commentsOn.style.display = 'block' : commentsOn.style.display = 'none';
     this.toggleGeneral = false;
   }
+
+  // ngOnInit(): void {
+  //   console.log(this);
+  //   console.log(this.flag);
+  //   if (this.flag) {
+  //     this.videogame$.subscribe(value => {
+  //       this.favoriteVideogame = value;
+  //       this.user.subscribe(value => {
+  //         this.user = value;
+  //         if (this.user) {
+  //           this.checkIfFavourite();
+  //         }
+  //       });
+  //     });
+  //   } else {
+  //     return null;
+  //   }
+  // }
+
+  addFavourite(uid: string, videogame: any) {
+    console.log(this.user)
+    // this.following = !this.following;
+    // if (this.user.favorites.find((videogame:any) => videogame._id === this.favoriteVideogame._id)) {
+    //   this.following = true;
+    // }
+    if (this.flag) {
+      // this.checkIfFavourite()
+      this.authService.addFavourite(uid, videogame._id).subscribe((value) => console.log(value));
+    }
+  }
+
+  // checkIfFavourite() {
+  //   if (this.user.favorites.find((element:any) => element._id === this.favoriteVideogame._id)) {
+  //     this.following = true;
+  //   }
+  // }
 }

@@ -7,6 +7,7 @@ function userRoute(User) {
 
   userRouter.route('')
     .get(user.getMethod)
+    .put(user.putMethod)
     .post(user.postMethod);
 
   return userRouter;

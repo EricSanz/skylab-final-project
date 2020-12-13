@@ -25,11 +25,11 @@
             <div class="signIn-signUp">
                 <p>Sign In | Sign Up</p>
                 <div class="email-container">
-                    <input type="text" placeholder="E-mail" #userEmail required>
+                    <input type="text" placeholder="E-mail" #userEmail >
                     <fa-icon [icon]="['fas', 'envelope']"></fa-icon>
                 </div>
                 <div class="password-container">
-                    <input [type]="fieldTextType ? 'text' : 'password'" class="password-control" placeholder="Password" #userPassword required>
+                    <input [type]="fieldTextType ? 'text' : 'password'" class="password-control" placeholder="Password" #userPassword >
                     <fa-icon id="eye" [icon]="['fas', 'eye']" (click)="toggleFieldTextType()"></fa-icon>
                     <fa-icon id="eye-slash" [icon]="['fas', 'eye-slash']" (click)="toggleFieldTextType()"></fa-icon>
                 </div>

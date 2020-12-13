@@ -4,8 +4,8 @@ const user = new Schema({
   uid: { type: String },
   displayName: { type: String },
   email: { type: String },
-  userPhoto: { type: String },
-  favorites: { type: [String] },
+  photoURL: { type: String },
+  favorites: [{ type: Schema.Types.ObjectId, ref: 'videogames' }],
 });
 
 module.exports = model('users', user);

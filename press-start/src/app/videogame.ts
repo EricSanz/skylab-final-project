@@ -21,5 +21,6 @@ export interface Videogame {
     edition: boolean,
     complement: Complement[],
     nameEdition: string,
+    photoSlider: string,
     playStation: boolean,
 }

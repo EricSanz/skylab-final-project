@@ -6,6 +6,7 @@ import { Subject, Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import firebase from 'firebase/app';
 import { catchError, tap } from 'rxjs/operators';
+import { UserLoginStateService } from './user-login-state.service';
 
 @Injectable({
   providedIn: 'root'
@@ -23,8 +24,15 @@ export class AuthService {
       'Content-Type': 'application/json'
     })
   }
+  localStorage: any;
 
-  constructor( public http: HttpClient, public afAuth: AngularFireAuth, private router: Router) { }
+  constructor( 
+    public http: HttpClient,
+    public afAuth: AngularFireAuth,
+    private router: Router,
+    public loginState: UserLoginStateService, ) {
+    this.loginState.setUser(this.user$)
+   }
 
   handleError (operation = 'operation', result?: any) {
     return (error: any): Observable<any> => {
@@ -36,13 +44,15 @@ export class AuthService {
 
   async loginWithGoogle() {
     this.fireUser = await this.afAuth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
-    // localStorage.user = JSON.stringify(this.fireUser)
+    // this.localStorage.user = JSON.stringify(this.fireUser.user);
+    this.loginState.setUser(this.fireUser.user);
     this.modifyUser(this.fireUser.user).subscribe();
-    // return this.fireUser.user;
+    return this.fireUser.user;
   }
 
   async logOut(){
     await this.afAuth.signOut();
+    this.localStorage.remove();
     if (this.router.url === '/user') {
       this.router.navigate(['/home'])
     }  
@@ -69,10 +79,23 @@ export class AuthService {
 
   modifyUser(user: User): Observable<User> {
     const url = `${this.userUrl}`;
-    return this.http.post<User>(url, user)
+    return this.http.put<User>(url, user)
     .pipe(
       tap(() => console.log(`created user ${this.fireUser.user.uid}`)),
       catchError(this.handleError(`getUser name=${name}`, []))
     );
+  }
+
+  addFavourite(uid: string, videogame: string): Observable<User> {
+    const url = `${this.userUrl}`;
+    return this.http.post<User>(url, {uid, videogame})
+    .pipe(
+      tap((value) => console.log('added to favourites', value)),
+      catchError(this.handleError('error adding favourite', []))
+    );
+  }
+
+  setUser(user: Subject<User>) {
+    this.user$ = user;
   }
 }

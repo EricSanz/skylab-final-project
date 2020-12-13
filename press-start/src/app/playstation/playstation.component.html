@@ -1,38 +1,40 @@
 <p class="list-title">PlayStation Videogames</p>
+<!-- <mat-carousel class="slider" timings="400ms" [autoplay]="true" interval='5000'>
+    <mat-carousel-slide class="slide" height="100%" *ngFor="let slide of videogame.photoSlider" [image]="slide" [hideOverlay]="false"></mat-carousel-slide>
+</mat-carousel> -->
 <div class="videogame__list-section" *ngIf="videogames$ | async as videogame">
     <div *ngFor="let videogame of videogame" class="videogame-section">
         <div *ngIf="videogame.playStation">
-            <div routerLink="/product/{{videogame._id}}" class="videogame-container">
-                <div *ngIf="videogame.sales; else favAlone" class="onsale-container">
-                    <div class="onsale">
-                        <p class="onsale-content">On Sale</p>
-                        <p class="onsale-line"></p>
+            <div routerLink="/product/{{videogame._id}}" class="playstation-container">
+                <div class="videogame-container-border">
+                    <div *ngIf="videogame.sales; else favAlone" class="onsale-container">
+                        <div class="onsale">
+                            <p class="onsale-content">On Sale</p>
+                            <p class="onsale-line"></p>
+                        </div>
+                        <fa-icon class="add__favourites-icon-onsale" [icon]="['fas', 'heart']"></fa-icon>
                     </div>
-                    <fa-icon class="add__favourites-icon-onsale" [icon]="['fas', 'heart']"></fa-icon>
-                </div>
-                <ng-template #favAlone>
-                    <fa-icon class="add__favourites-icon" [icon]="['fas', 'heart']"></fa-icon>
-                </ng-template>
-                <img [src]="videogame.platform.cover[0]" class="image">
-                <!-- <mat-carousel class="slider" timings="400ms" [autoplay]="true" interval='5000'>
-                    <mat-carousel-slide class="slide" height="100%" *ngFor="let slide of videogame.platform.cover" [image]="slide" [hideOverlay]="false"></mat-carousel-slide>
-                </mat-carousel> -->
-                <div class="price">
-                    <div *ngIf="videogame.shortName; else originalName">
-                        <p class="videogame-title onHover">{{videogame.shortName}}</p>
-                    </div>
-                    <ng-template #originalName>
-                        <p class="videogame-title onHover">{{videogame.name}}</p>
+                    <ng-template #favAlone>
+                        <fa-icon class="add__favourites-icon" [icon]="['fas', 'heart']"></fa-icon>
                     </ng-template>
-                    <div *ngIf="videogame.sales; else notSale" class="strikeout">
-                        {{videogame.price | currency: 'EUR'}}
-                        <span class="notstrikeout">{{videogame.salePrice | currency: 'EUR'}}</span>
+                    <img [src]="videogame.platform.cover[0]" class="image">
+                    <div class="price">
+                        <div *ngIf="videogame.shortName; else originalName">
+                            <p class="videogame-title onHover">{{videogame.shortName}}</p>
+                        </div>
+                        <ng-template #originalName>
+                            <p class="videogame-title onHover">{{videogame.name}}</p>
+                        </ng-template>
+                        <div *ngIf="videogame.sales; else notSale" class="strikeout">
+                            {{videogame.price | currency: 'EUR'}}
+                            <span class="notstrikeout">{{videogame.salePrice | currency: 'EUR'}}</span>
+                        </div>
+                        <ng-template #notSale >
+                            <p class="notsale">
+                            {{videogame.price | currency: 'EUR'}}
+                            </p>
+                        </ng-template>
                     </div>
-                    <ng-template #notSale >
-                        <p class="notsale">
-                        {{videogame.price | currency: 'EUR'}}
-                        </p>
-                    </ng-template>
                 </div>
             </div>
         </div>

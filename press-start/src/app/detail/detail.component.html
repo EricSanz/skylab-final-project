@@ -14,7 +14,14 @@
                     </select>
                 </div>
                 <div class="title__right-container">
-                    <fa-icon class="add__favourites-icon" [icon]="['fas', 'heart']"></fa-icon>
+                    <button (click)="user ? addFavourite(user.uid, videogame) : null">
+                        <div *ngIf="following; else elseHeart">
+                            <fa-icon class="add__favourites-icon-active" [icon]="['fas', 'heart']"></fa-icon>
+                        </div>
+                        <ng-template #elseHeart>
+                            <fa-icon class="add__favourites-icon" [icon]="['fas', 'heart']"></fa-icon>
+                        </ng-template>
+                    </button>
                 </div>
             </div>
             <img class="product-cover" id="cover-image" src="{{videogame.platform.cover[coverIndex]}}">

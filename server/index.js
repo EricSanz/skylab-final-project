@@ -14,7 +14,7 @@ const app = express();
 const port = process.env.PORT || 1728;
 const dbURL = process.env.dbURL || 'mongodb://localhost/videoGamesdb';
 
-connect(dbURL, { useNewUrlParser: true, useUnifiedTopology: true });
+connect(dbURL, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false });
 
 app.use(cors());
 app.use(morgan('tiny'));
