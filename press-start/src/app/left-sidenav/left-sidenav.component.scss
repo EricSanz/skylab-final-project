@@ -8,6 +8,7 @@
     width: 350px;
     border-right: 1px solid #161616;
     box-shadow: 0px 0px 10px 0px rgba(#000000, 0.9);
+    z-index: 4;
     ul {
         background: #f0da14;
         height: 100vh;
@@ -21,6 +22,7 @@
             padding: 5px;
             border-bottom: 1px solid #ffffff;
             margin-bottom: 1px;
+            outline: none;
             cursor: pointer;
             p {
                 padding-left: 40px;

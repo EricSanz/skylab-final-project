@@ -1,9 +1,11 @@
 import { Description } from './description';
 import { Platform } from './plataforma';
+import { Complement } from './complement';
 
 export interface Videogame {
-    id: string,
+    _id: string,
     name: string,
+    shortName: string,
     genre: string[],
     developer: string,
     images: string[],
@@ -16,4 +18,9 @@ export interface Videogame {
     platform: Platform,
     description: Description[],
     sales: boolean,
+    edition: boolean,
+    complement: Complement[],
+    nameEdition: string,
+    photoSlider: string,
+    playStation: boolean,
 }

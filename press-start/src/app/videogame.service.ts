@@ -9,7 +9,9 @@ import { catchError, tap } from 'rxjs/operators'
 })
 export class VideogameService {
 
-  public videogamesUrl = 'http://localhost:1728'
+  public videogamesUrl = 'http://localhost:1728';
+  public videogamesListUrl = 'http://localhost:1728/products';
+  public searchVideogamesUrl = 'http://localhost:1728/products/search';
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -32,7 +34,8 @@ export class VideogameService {
   }
 
   getVideogames(): Observable<Videogame[]> {
-    return this.http.get<Videogame[]>(this.videogamesUrl)
+    const url = `${this.videogamesListUrl}`;
+    return this.http.get<Videogame[]>(url)
     .pipe(
       tap(() => console.log('fetched videogames')),
       tap((videogames) => this.videogames$.next(videogames)),
@@ -47,5 +50,15 @@ export class VideogameService {
       tap(() => console.log(`fetched videogame id=${videogameId}`)),
       catchError(this.handleError(`getVideogame`, []))
     );
+  }
+
+  searchVideogame(term: string): Observable<Videogame> {
+    const url = `${this.searchVideogamesUrl}/${term}`
+    return this.http.get<Videogame[]>(url)
+    .pipe(
+      tap(() => console.log('fetched videogames')),
+      tap((videogames) => this.videogames$.next(videogames)),
+      catchError(this.handleError('getSearchVideogames', {}))
+    )
   }
 }

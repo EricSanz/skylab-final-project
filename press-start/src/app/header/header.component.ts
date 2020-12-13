@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-header',
@@ -7,7 +9,10 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 
 export class HeaderComponent implements OnInit {
-  constructor() { }
+  constructor(
+    public authService: AuthService,
+    public auth: AngularFireAuth
+  ) { }
 
   @Input() public changed: boolean = false;
 

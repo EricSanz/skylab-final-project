@@ -1,29 +1,52 @@
-<section class="right__sidenav" id='toogleRightSideNav'>
+<div class="right__sidenav" id='toogleRightSideNav'>
     <div class="right__sidenav-container">
-        <div class="right__sidenav-title">
-            <p>My Account</p>
-            <fa-icon [icon]="['fas', 'times']" (click)="toggleRightSidenav()"></fa-icon>
-        </div>
-        <div class="signIn-signUp">
-            <p>Sign In | Sign Up</p>
-            <div class="email-container">
-                <input type="text" placeholder="E-mail">
-                <fa-icon [icon]="['fas', 'envelope']"></fa-icon>
+        <div *ngIf="auth.user | async as user; else guest">
+            <div class="right__sidenav-signout-container">
+                <button class="logout-button" (click)="logout()">Sign Out</button>
+                <fa-icon [icon]="['fas', 'times']" (click)="toggleRightSidenav()"></fa-icon>
             </div>
-            <div class="password-container">
-                <input [type]="fieldTextType ? 'text' : 'password'" class="password-control" placeholder="Password">
-                <fa-icon id="eye" [icon]="['fas', 'eye']" (click)="toggleFieldTextType()"></fa-icon>
-                <fa-icon id="eye-slash" [icon]="['fas', 'eye-slash']" (click)="toggleFieldTextType()"></fa-icon>
+            <div class="user__info-container">
+                <img class="user__profile-picture" src="{{user.photoURL}}">
+                <p class="user__profile-name">{{user.displayName}}</p>
+                <!-- <p>Logged with {{user.email}}</p> -->
             </div>
-            <p class="forgot-password">Forgot Your Password?</p>
-            <button>Send</button>
+            <ul class="list-container">
+                <li class="list-sidenav" *ngFor=" let category of userCategories" (click)="toggleRightSidenav()" routerLink="{{category.route}}">
+                    <mat-icon>keyboard_arrow_left</mat-icon>
+                    <p>{{category.userCategory}}</p>
+                </li>
+            </ul>
         </div>
-        <div class="other-signIn-methods">
-            <p class="title-methods">Other sign In Methods:</p>
-            <div>
-                <fa-icon [icon]="['fab', 'facebook']"></fa-icon>
-                <fa-icon [icon]="['fab', 'google']"></fa-icon>
+        <ng-template #guest>
+            <div class="right__sidenav-title">
+                <p>My Account</p>
+                <fa-icon [icon]="['fas', 'times']" (click)="toggleRightSidenav()"></fa-icon>
             </div>
-        </div>
+            <div class="signIn-signUp">
+                <p>Sign In | Sign Up</p>
+                <div class="email-container">
+                    <input type="text" placeholder="E-mail" #userEmail >
+                    <fa-icon [icon]="['fas', 'envelope']"></fa-icon>
+                </div>
+                <div class="password-container">
+                    <input [type]="fieldTextType ? 'text' : 'password'" class="password-control" placeholder="Password" #userPassword >
+                    <fa-icon id="eye" [icon]="['fas', 'eye']" (click)="toggleFieldTextType()"></fa-icon>
+                    <fa-icon id="eye-slash" [icon]="['fas', 'eye-slash']" (click)="toggleFieldTextType()"></fa-icon>
+                </div>
+                <p class="forgot-password">Forgot Your Password?</p>
+                <button (click)="signUpWithEmailPassword(userEmail.value, userPassword.value)">Send</button>
+            </div>
+            <div class="other-signIn-methods">
+                <p class="title-methods">Other sign In Methods:</p>
+                <div>
+                    <button class="button-login">
+                        <fa-icon [icon]="['fab', 'facebook']"></fa-icon>
+                    </button>
+                    <button class="button-login" (click)="login()">
+                        <fa-icon [icon]="['fab', 'google']"></fa-icon>
+                    </button>
+                </div>
+            </div>
+        </ng-template>
     </div>
-</section>
+</div>

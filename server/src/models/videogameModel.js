@@ -16,6 +16,8 @@ const videogameSchema = new Schema({
   release: { type: String },
   comments: { type: [String] },
   sales: { type: Boolean },
+  playStation: { type: Boolean },
+  photoSlider: { type: String },
 });
 
 module.exports = model('videogames', videogameSchema);

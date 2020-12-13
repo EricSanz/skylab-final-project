@@ -8,7 +8,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { faPlaystation, faXbox, faTwitter, faFacebook, faInstagram, faGoogle, faCcVisa, faCcMastercard, faCcPaypal } from '@fortawesome/free-brands-svg-icons';
-import { faNewspaper, faSearch, faCalendar, faCalendarAlt, faUsers, faUser, faShippingFast, faWindowClose, faTimes, faTimesCircle, faAddressBook, faComment, faCommentAlt, faComments, faShoppingCart, faMoneyBillWave, faBars, faCaretDown, faCaretRight, faCaretLeft, faCaretUp, faArrowAltCircleLeft, faEnvelope, faEye, faEyeSlash, faBoxes, faCartPlus, faHeart } from '@fortawesome/free-solid-svg-icons';
+import { faNewspaper, faSearch, faCalendar, faCalendarAlt, faUsers, faUser, faShippingFast, faWindowClose, faTimes, faTimesCircle, faAddressBook, faComment, faCommentAlt, faComments, faShoppingCart, faMoneyBillWave, faBars, faCaretDown, faCaretRight, faCaretLeft, faCaretUp, faArrowAltCircleLeft, faEnvelope, faEye, faEyeSlash, faBoxes, faCartPlus, faHeart, faSignInAlt, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -32,6 +32,21 @@ import { SearchComponent } from './search/search.component';
 import { RightSidenavComponent } from './right-sidenav/right-sidenav.component';
 import { DetailComponent } from './detail/detail.component';
 import { ListComponent } from './list/list.component';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { MatCarouselModule } from '@ngmodule/material-carousel';
+
+const firebaseConfig = {
+    apiKey: "AIzaSyCclbtjI5Uw49dlp47nfTpoLF8HMQxM1RA",
+    authDomain: "press-start-b9685.firebaseapp.com",
+    projectId: "press-start-b9685",
+    storageBucket: "press-start-b9685.appspot.com",
+    messagingSenderId: "532645051796",
+    appId: "1:532645051796:web:35f856b0df4bc4d2f62381",
+    measurementId: "G-Y6Z9QMCC6E"
+}
 
 @NgModule({
   declarations: [
@@ -56,6 +71,7 @@ import { ListComponent } from './list/list.component';
     RightSidenavComponent,
     DetailComponent,
     ListComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,
@@ -68,6 +84,10 @@ import { ListComponent } from './list/list.component';
     MatToolbarModule,
     MatCardModule,
     FontAwesomeModule,
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFirestoreModule,
+    AngularFireAuthModule,
+    MatCarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent],
@@ -77,6 +97,6 @@ export class AppModule {
       library.addIcons(faAddressBook, faCalendar, faCalendarAlt, faCcMastercard, faCcPaypal, faCcVisa, faComment,
         faCommentAlt, faComments, faFacebook, faInstagram, faMoneyBillWave, faNewspaper, faPlaystation, faSearch,
         faShippingFast, faShoppingCart, faHeart, faCartPlus, faBoxes, faTimes, faTimesCircle, faGoogle, faTwitter, faUsers, faWindowClose, faXbox, faCaretUp,
-        faCaretRight, faCaretLeft, faCaretDown, faBars, faUser, faArrowAltCircleLeft, faEnvelope, faEye, faEyeSlash);
+        faCaretRight, faCaretLeft, faCaretDown, faBars, faSignInAlt, faSignOutAlt, faUser, faArrowAltCircleLeft, faEnvelope, faEye, faEyeSlash);
     }
 }
