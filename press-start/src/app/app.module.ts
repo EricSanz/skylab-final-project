@@ -37,6 +37,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MatCarouselModule } from '@ngmodule/material-carousel';
+import { FavoritesComponent } from './favorites/favorites.component';
 
 const firebaseConfig = {
     apiKey: "AIzaSyCclbtjI5Uw49dlp47nfTpoLF8HMQxM1RA",
@@ -72,6 +73,7 @@ const firebaseConfig = {
     DetailComponent,
     ListComponent,
     DashboardComponent,
+    FavoritesComponent,
   ],
   imports: [
     BrowserModule,

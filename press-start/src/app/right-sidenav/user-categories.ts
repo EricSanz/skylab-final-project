@@ -8,8 +8,8 @@ export const userCategories: Array<any> = [
         route: '/dashboard/personal-info'
     },
     {
-        userCategory: 'Favourites List',
-        route: '/dashboard/favourites'
+        userCategory: 'Your Favorites',
+        route: '/dashboard/favorites'
     },
     {
         userCategory: 'Useful Information',

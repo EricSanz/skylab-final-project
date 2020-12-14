@@ -6,6 +6,7 @@ import { CalendarComponent } from './calendar/calendar.component';
 import { ComingsoonComponent } from './comingsoon/comingsoon.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { DetailComponent } from './detail/detail.component';
+import { FavoritesComponent } from './favorites/favorites.component';
 import { HomeComponent } from './home/home.component';
 import { InformationComponent } from './information/information.component';
 import { ListComponent } from './list/list.component';
@@ -35,6 +36,7 @@ const routes: Routes = [
   { path: 'accesories', component: AccesoriesComponent },
   { path: 'information', component: InformationComponent },
   { path: 'dashboard', component: DashboardComponent},
+  { path: 'dashboard/favorites', component: FavoritesComponent},
   { path: '**', redirectTo: '/home', pathMatch: 'full'}
 ];
 
