@@ -37,6 +37,11 @@
                 .title__right-container {
                     padding-right: 50px;
                     padding-top: 20px;
+                    .favorite__button {
+                        background: none;
+                        outline: none;
+                        border: none;
+                    }
                     .add__favourites-icon {
                         font-size: 40px;
                         cursor: pointer;
@@ -45,6 +50,7 @@
                         color: red;
                     }
                     .add__favourites-icon-active {
+                        font-size: 40px;
                         color: red;
                     }
                 }

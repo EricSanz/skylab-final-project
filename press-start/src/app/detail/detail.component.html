@@ -14,8 +14,8 @@
                     </select>
                 </div>
                 <div class="title__right-container">
-                    <button (click)="user ? addFavourite(user.uid, videogame) : null">
-                        <div *ngIf="following; else elseHeart">
+                    <button (click)="user ? addFavourite(user.uid, videogame) : null" class="favorite__button">
+                        <div *ngIf="isFavorite; else elseHeart">
                             <fa-icon class="add__favourites-icon-active" [icon]="['fas', 'heart']"></fa-icon>
                         </div>
                         <ng-template #elseHeart>
