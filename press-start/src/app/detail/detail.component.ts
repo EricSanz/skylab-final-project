@@ -4,7 +4,6 @@ import { ActivatedRoute } from '@angular/router';
 import { VideogameService } from '../videogame.service';
 import { Observable } from 'rxjs';
 import { AuthService } from '../auth.service';
-import { User } from '../user';
 import { UserLoginStateService } from '../user-login-state.service';
 
 
@@ -14,8 +13,6 @@ import { UserLoginStateService } from '../user-login-state.service';
   styleUrls: ['./detail.component.scss']
 })
 export class DetailComponent {
-  // user: any;
-  // user$: Observable<User>
 
   get videogameId () {
     return this.route.snapshot.paramMap.get('videogameId')!;
@@ -29,7 +26,7 @@ export class DetailComponent {
 
 
   favoriteVideogame: any;
-  following: boolean = false;
+  isFavorite: boolean = false;
   flag: boolean;
   coverIndex:number = 0;
 
@@ -96,39 +93,10 @@ export class DetailComponent {
     this.toggleGeneral = false;
   }
 
-  // ngOnInit(): void {
-  //   console.log(this);
-  //   console.log(this.flag);
-  //   if (this.flag) {
-  //     this.videogame$.subscribe(value => {
-  //       this.favoriteVideogame = value;
-  //       this.user.subscribe(value => {
-  //         this.user = value;
-  //         if (this.user) {
-  //           this.checkIfFavourite();
-  //         }
-  //       });
-  //     });
-  //   } else {
-  //     return null;
-  //   }
-  // }
-
   addFavourite(uid: string, videogame: any) {
-    console.log(this.user)
-    // this.following = !this.following;
-    // if (this.user.favorites.find((videogame:any) => videogame._id === this.favoriteVideogame._id)) {
-    //   this.following = true;
-    // }
     if (this.flag) {
-      // this.checkIfFavourite()
+      this.isFavorite = !this.isFavorite;
       this.authService.addFavourite(uid, videogame._id).subscribe((value) => console.log(value));
     }
   }
-
-  // checkIfFavourite() {
-  //   if (this.user.favorites.find((element:any) => element._id === this.favoriteVideogame._id)) {
-  //     this.following = true;
-  //   }
-  // }
 }

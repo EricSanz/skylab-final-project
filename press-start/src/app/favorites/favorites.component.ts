@@ -5,16 +5,13 @@ import { UserLoginStateService } from '../user-login-state.service';
 import { VideogameService } from '../videogame.service';
 import { User } from '../user';
 import { Observable } from 'rxjs';
-import { userCategories } from '../right-sidenav/user-categories';
 
 @Component({
-  selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss']
+  selector: 'app-favorites',
+  templateUrl: './favorites.component.html',
+  styleUrls: ['./favorites.component.scss']
 })
-export class DashboardComponent implements OnInit {
-
-  userCategories = userCategories;
+export class FavoritesComponent implements OnInit {
 
   flag: boolean;
 
@@ -31,7 +28,6 @@ export class DashboardComponent implements OnInit {
       this.flag = value
     })
    }
-
 
   ngOnInit(): void {
   }

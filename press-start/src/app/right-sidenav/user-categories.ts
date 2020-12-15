@@ -4,15 +4,19 @@ export const userCategories: Array<any> = [
         route: '/dashboard'
     },
     {
-        userCategory: 'Personal Information',
-        route: '/dashboard/personal-info'
+        userCategory: 'My orders',
+        route: '/dashboard'
     },
     {
-        userCategory: 'Favourites List',
+        userCategory: 'My favourites',
         route: '/dashboard/favourites'
     },
     {
-        userCategory: 'Useful Information',
+        userCategory: 'Personal data',
+        route: '/dashboard/personal-info'
+    },
+    {
+        userCategory: 'Useful information',
         route: '/information'
     }
 

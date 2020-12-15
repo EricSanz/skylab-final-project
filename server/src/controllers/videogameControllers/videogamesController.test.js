@@ -1,4 +1,4 @@
-const videogames = require('../models/videogameModel');
+const videogames = require('../../models/videogameModel');
 const videogamesController = require('./videogamesController')(videogames);
 
 describe('videogamesController Methods', () => {
