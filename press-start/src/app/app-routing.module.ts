@@ -36,7 +36,7 @@ const routes: Routes = [
   { path: 'accesories', component: AccesoriesComponent },
   { path: 'information', component: InformationComponent },
   { path: 'dashboard', component: DashboardComponent},
-  { path: 'dashboard/favorites', component: FavoritesComponent},
+  { path: 'dashboard/favourites', component: FavoritesComponent},
   { path: '**', redirectTo: '/home', pathMatch: 'full'}
 ];
 

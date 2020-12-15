@@ -52,7 +52,7 @@ export class AuthService {
 
   async logOut(){
     await this.afAuth.signOut();
-    this.localStorage.remove();
+    this.localStorage.remove(this.fireUser.user);
     if (this.router.url === '/user') {
       this.router.navigate(['/home'])
     }  

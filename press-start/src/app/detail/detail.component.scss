@@ -1,16 +1,23 @@
 .product__details-container {
     margin-top: 10px;
     padding: 50px;
+    background: #d9dede;
     .product__details {
         display: flex;
         .product__details-left{
             display: flex;
             flex-direction: column;
-            border: 2px solid #161616;
+            background: white;
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
             .product__title-container {
                 background: #f0da14;
                 padding-bottom: 15px;
-                border-bottom: 2px solid #161616;
+                border-bottom: 4px solid #161616;
+                border-top: 1px solid #161616;
+                border-left: 1px solid #161616;
+                border-right: 1px solid #161616;
+                border-top-left-radius: 20px;
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
@@ -56,6 +63,7 @@
                 }
             }
             .product-cover {
+                background: white;
                 padding-top: 40px;
                 width: 400px;
                 height: 500px;
@@ -63,8 +71,8 @@
         }
         .product__details-right {
             width: 100%;
-            border: 2px solid #161616;
             height: 696px;
+            margin-left: 10px;
             .product__buy {
                 display: flex;
                 align-items: center;
@@ -208,8 +216,9 @@
             }
             .product__description-container {
                 display: block;
-                height: 600px;
+                height: 602px;
                 overflow: auto;
+                background: white;
                 .titlegame-container {
                     margin-top: 20px;
                     padding-top: 30px;
@@ -229,7 +238,6 @@
                             flex-direction: column;
                             justify-content: space-around;
                             margin-right: 30px;
-                            // width: 100%;
                             .genre-container {
                                 display: flex;
                                 justify-content: space-between;
@@ -315,15 +323,15 @@
             }
             .product__images-container {
                 display: none;
-                height: 500px;
+                height: 522px;
                 overflow: auto;
                 padding: 40px;
-                margin-left: 5px;
+                background: white;
                 .images-container {
                     display: inline-flex;
                     .images-resolution {
                         margin: 12.5px;
-                        width: 420px;
+                        width: 425px;
                         height: 225px;
                     }
                 }
