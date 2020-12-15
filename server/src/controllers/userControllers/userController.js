@@ -1,8 +1,3 @@
-/* eslint-disable max-len */
-/* eslint-disable no-console */
-/* eslint-disable no-param-reassign */
-/* eslint-disable no-underscore-dangle */
-
 function userController(User) {
   function getMethod(req, res) {
     const query = { displayName: req.query.displayName };
