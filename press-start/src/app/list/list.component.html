@@ -1,6 +1,40 @@
 <p class="list-title">All Videogames</p>
 <div class="videogame__list-section" *ngIf="videogames$ | async as videogame">
-    <div *ngFor="let videogame of videogame" class="videogame-section">
+    <div class="favourites__link" *ngFor="let videogame of videogame" routerLink="/product/{{videogame._id}}">
+        <div class="favorite__product" *ngIf="videogame.sales; else notSaleProduct">
+            <div class="product__options">
+                <div class="product__onsale">
+                    <p class="onsale">On Sale</p>
+                </div>
+                <div class="product__buy">
+                    <fa-icon class="buy-icon" [icon]="['fas', 'cart-plus']"></fa-icon>
+                </div>
+            </div>
+            <mat-carousel class="slider" timings="400ms" [autoplay]="true" interval='5000'>
+                <mat-carousel-slide class="slide" height="100%" *ngFor="let slide of videogame.platform.cover" [image]="slide" [hideOverlay]="false"></mat-carousel-slide>
+            </mat-carousel>
+            <!-- <img class="imagen" [src]="videogame.platform.cover[0]"> -->
+            <p class="product__name">{{videogame.name}}</p>
+            <div class="first__price-options">
+                <p class="stroke">{{videogame.price | currency: 'EUR'}}</p>
+                <p class="notstroke">{{videogame.salePrice | currency: 'EUR'}}</p>
+            </div>
+        </div>
+        <ng-template #notSaleProduct>
+            <div class="favorite__product-notsale">
+                <div class="product__buy-notsale">
+                    <fa-icon class="buy-icon-notsale" [icon]="['fas', 'cart-plus']"></fa-icon>
+                </div>
+                <mat-carousel class="slider" timings="400ms" [autoplay]="true" interval='5000'>
+                    <mat-carousel-slide class="slide" height="100%" *ngFor="let slide of videogame.platform.cover" [image]="slide" [hideOverlay]="false"></mat-carousel-slide>
+                </mat-carousel>
+                <!-- <img class="imagen-notsale" [src]="videogame.platform.cover[0]"> -->
+                <p class="product__name-notsale">{{videogame.name}}</p>
+                <p class="original__price">{{videogame.price | currency: 'EUR'}}</p>
+            </div>
+        </ng-template>
+    </div>
+    <!-- <div *ngFor="let videogame of videogame" class="videogame-section">
         <div routerLink="/product/{{videogame._id}}" class="videogame-container">
             <div *ngIf="videogame.sales; else favAlone" class="onsale-container">
                 <div class="onsale">
@@ -33,5 +67,5 @@
                 </ng-template>
             </div>
         </div>
-    </div>
+    </div> -->
 </div>

@@ -193,6 +193,9 @@
                 cursor: pointer;
                 transform: scale(1.03);
                 background: #f0da14;
+                .product__name {
+                    background: white;
+                }
                 .product__buy:hover {
                     background: white;
                 }
@@ -249,6 +252,9 @@
                 cursor: pointer;
                 transform: scale(1.03);
                 background: #f0da14;
+                .product__name-notsale {
+                    background: white;
+                }
                 .product__buy-notsale:hover {
                     background: white;
                 }
