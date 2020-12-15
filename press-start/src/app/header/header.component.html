@@ -5,13 +5,9 @@
     <div class="header-container">
         <div class="header__left">
             <div class="sidenav-open">
-                <fa-icon [icon]="['fas', 'bars']" (click)="child.openCloseLeftSidenav()"></fa-icon>
-                <p>Menu</p>
+                <fa-icon id="testbutton" [icon]="['fas', 'bars']" (click)="child.openCloseLeftSidenav()"></fa-icon>
+                <p id="menutest">Menu</p>
             </div>
-            <!-- <div class="sidenav-close" *ngIf="changed">
-                <fa-icon [icon]="['fas', 'arrow-alt-circle-left']" (click)="changed = !changed" (click)="child.closeLeftSidenav()"></fa-icon>
-                <p>Close Menu</p>
-            </div> -->
             <div class="calendar-icon">
                 <fa-icon [icon]="['fas', 'calendar-alt']" routerLink="calendar"></fa-icon>
                 <p>Calendar</p>
@@ -26,8 +22,6 @@
             <div *ngIf="auth.user | async as user; else notlogged">
                 <div class="logged-in" (click)="child2.toggleRightSidenav()">
                     <fa-icon class="out-icon" [icon]="['fas', 'sign-out-alt']"></fa-icon>
-                    <!-- <img class="user-photo" src="{{user.photoURL}}"> -->
-                    <!-- <p class="user-name">{{user.displayName}}</p> -->
                     <p class="sign-out">Sign Out</p>
                 </div>
             </div>

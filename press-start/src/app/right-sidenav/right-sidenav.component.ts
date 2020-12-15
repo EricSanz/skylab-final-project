@@ -20,10 +20,6 @@ export class RightSidenavComponent implements OnInit {
     public loginstate: UserLoginStateService,
     private router: Router) { }
 
-  signUpWithEmailPassword(email: string, password: string ) {
-    this.authService.SignUp(email, password)
-  }
-
   async login() {
     this.authService.loginWithGoogle();
   }

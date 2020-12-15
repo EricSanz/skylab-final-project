@@ -58,16 +58,6 @@ export class AuthService {
     }  
   }
 
-  async SignUp(email: string, password: string) {
-    this.fireUser.afAuth.auth.signInWithEmailAndPassword(email, password);
-    this.modifyUser(this.fireUser.user).subscribe();
-  }
-
-  SignIn(email: string, password: string) {
-    this.fireUser.afAuth.auth.createUserWithEmailAndPassword(email, password)
-    this.modifyUser(this.fireUser.user).subscribe();
-  }
-
   getUser (name: string): Observable<User> {
     const url = `${this.userUrl}/?displayName=${name}`;
     return this.http.get<User>(url)

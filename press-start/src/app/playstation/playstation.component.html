@@ -17,7 +17,7 @@
                     <ng-template #favAlone>
                         <fa-icon class="add__favourites-icon" [icon]="['fas', 'heart']"></fa-icon>
                     </ng-template>
-                    <img [src]="videogame.platform.cover[0]" class="image">
+                    <img [src]="videogame.platform.cover[0]" class="image" alt="cover-image">
                     <div class="price">
                         <div *ngIf="videogame.shortName; else originalName">
                             <p class="videogame-title onHover">{{videogame.shortName}}</p>

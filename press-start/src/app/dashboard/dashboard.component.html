@@ -1,7 +1,7 @@
 <div *ngIf="user$ | async as user" class="user__favorites-section">
     <div class="user__menu-container">
         <div class="upper__menu-container">
-            <img class="user__photo" [src]="user.photoURL">
+            <img class="user__photo" [src]="user.photoURL" alt="userphoto">
             <div class="upper__menu-welcome">
                 <p class="name__welcome">Hello {{user.displayName}} !</p>
                 <p class="press__welcome">Welcome to your Press Start</p>

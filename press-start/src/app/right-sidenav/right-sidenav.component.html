@@ -6,7 +6,7 @@
                 <fa-icon [icon]="['fas', 'times']" (click)="toggleRightSidenav()"></fa-icon>
             </div>
             <div class="user__info-container">
-                <img class="user__profile-picture" src="{{user.photoURL}}">
+                <img class="user__profile-picture" src="{{user.photoURL}}" alt="user-photo">
                 <p class="user__profile-name">{{user.displayName}}</p>
                 <!-- <p>Logged with {{user.email}}</p> -->
             </div>
@@ -34,7 +34,7 @@
                     <fa-icon id="eye-slash" [icon]="['fas', 'eye-slash']" (click)="toggleFieldTextType()"></fa-icon>
                 </div>
                 <p class="forgot-password">Forgot Your Password?</p>
-                <button (click)="signUpWithEmailPassword(userEmail.value, userPassword.value)">Send</button>
+                <button>Send</button>
             </div>
             <div class="other-signIn-methods">
                 <p class="title-methods">Other sign In Methods:</p>

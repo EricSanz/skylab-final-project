@@ -39,16 +39,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MatCarouselModule } from '@ngmodule/material-carousel';
 import { FavoritesComponent } from './favorites/favorites.component';
-
-const firebaseConfig = {
-    apiKey: "AIzaSyCclbtjI5Uw49dlp47nfTpoLF8HMQxM1RA",
-    authDomain: "press-start-b9685.firebaseapp.com",
-    projectId: "press-start-b9685",
-    storageBucket: "press-start-b9685.appspot.com",
-    messagingSenderId: "532645051796",
-    appId: "1:532645051796:web:35f856b0df4bc4d2f62381",
-    measurementId: "G-Y6Z9QMCC6E"
-}
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -87,7 +78,7 @@ const firebaseConfig = {
     MatToolbarModule,
     MatCardModule,
     FontAwesomeModule,
-    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
     AngularFireAuthModule,
     MatCarouselModule
