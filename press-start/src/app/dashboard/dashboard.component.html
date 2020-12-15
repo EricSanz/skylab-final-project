@@ -8,10 +8,12 @@
             </div>
         </div>
         <div class="down__menu-options">
-            <li class="menu-options" *ngFor="let category of userCategories">
-                <p class="category-option">{{category.userCategory}}</p>
-                <mat-icon class="category-icon">keyboard_arrow_right</mat-icon>
-            </li>
+            <ul class="list__menu-options">
+                <li class="menu-options" *ngFor="let category of userCategories">
+                    <p class="category-option">{{category.userCategory}}</p>
+                    <mat-icon class="category-icon">keyboard_arrow_right</mat-icon>
+                </li>
+            </ul>
         </div>
     </div>
     <div class="favorites__products-container">
@@ -30,7 +32,7 @@
                             <fa-icon class="buy-icon" [icon]="['fas', 'cart-plus']"></fa-icon>
                         </div>
                     </div>
-                    <img class="imagen" [src]="favourites.platform.cover[0]">
+                    <img class="imagen" [src]="favourites.platform.cover[0]" alt="cover-videogame">
                     <p class="product__name">{{favourites.name}}</p>
                     <div class="first__price-options">
                         <p class="stroke">{{favourites.price | currency: 'EUR'}}</p>
@@ -42,7 +44,7 @@
                         <div class="product__buy-notsale">
                             <fa-icon class="buy-icon-notsale" [icon]="['fas', 'cart-plus']"></fa-icon>
                         </div>
-                        <img class="imagen-notsale" [src]="favourites.platform.cover[0]">
+                        <img class="imagen-notsale" [src]="favourites.platform.cover[0]" alt="cover-videogame-two">
                         <p class="product__name-notsale">{{favourites.name}}</p>
                         <p class="original__price">{{favourites.price | currency: 'EUR'}}</p>
                     </div>

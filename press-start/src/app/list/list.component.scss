@@ -20,6 +20,12 @@
         }
     }
 }
+
+mat-carousel{
+    margin-bottom: -40px !important;
+    height: 300px !important;
+}
+
 .list-title {
     padding-top: 70px;
     padding-bottom: 20px;
@@ -28,6 +34,7 @@
     font-weight: bold;
 }
 .videogame__list-section {
+    padding-top: 10px;
     background: #d9dede;
     padding-left: 60px;
     padding-bottom: 40px;
@@ -43,7 +50,7 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        height: 420px;
+        height: 400px;
         width: 250px;
         margin-left: 15px;
         margin-right: 15px;
@@ -52,12 +59,12 @@
         box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.2);
         .product__options {
             display: inline-flex;
+            margin-top: -3px;
             .product__onsale {
                 width: 100px;
                 height: 40px;
                 border-bottom-right-radius: 20px;
                 border-bottom-left-radius: 20px;
-                margin-top: 7px;
                 background: red;
                 margin-right: 5px;
                 .onsale {
@@ -74,7 +81,6 @@
                 margin-left: 5px;
                 border-bottom-right-radius: 20px;
                 border-bottom-left-radius: 20px;
-                margin-top: 7px;
                 background: #f0da14;
                 .buy-icon {
                     display: flex;
@@ -104,6 +110,7 @@
             display: flex;
             justify-content: center;
             padding-top: 10px;
+            margin-bottom: 20px;
             height: 30px;
             font-size: 16px;
             font-weight: bold;
@@ -141,7 +148,7 @@
         cursor: pointer;
         transform: scale(1.03);
         background: #f0da14;
-        .product__name {
+        .product__name-sale, .product__name-saletwo {
             background: white;
         }
         .product__buy:hover {
@@ -154,7 +161,7 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        height: 420px;
+        height: 400px;
         width: 250px;
         margin-left: 15px;
         margin-right: 15px;
@@ -164,6 +171,7 @@
         .product__buy-notsale {
             width: 50px;
             height: 41px;
+            margin-top: -10px;
             border-bottom-right-radius: 20px;
             border-bottom-left-radius: 20px;
             background: #f0da14;
@@ -177,13 +185,13 @@
         }
         .imagen-notsale {
             width: 200px;
-            margin-top: -2px
+            margin-top: -2px;
         }
         .notsaletwo-container {
             background: #f0da14;
             width: 100%;
             height: 40px;
-            margin-bottom: 11px;
+            margin-bottom: 20px;
             .product__name-notsale {
                 display: flex;
                 justify-content: center;
@@ -199,6 +207,7 @@
             padding-top: 10px;
             width: 100%;
             height: 30px;
+            margin-bottom: 20px;
             font-size: 16px;
             font-weight: bold;
         }
@@ -214,8 +223,12 @@
         cursor: pointer;
         transform: scale(1.03);
         background: #f0da14;
+        .product__name-notsaletwo {
+            background: white;
+        }
         .product__name-notsale {
             background: white;
+            height: 30px;
         }
         .product__buy-notsale:hover {
             background: white;

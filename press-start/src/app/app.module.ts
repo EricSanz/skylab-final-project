@@ -91,7 +91,7 @@ export class AppModule {
       library.addIcons(faAddressBook, faCalendar, faCalendarAlt, faCcMastercard, faCcPaypal, faCcVisa, faComment,
         faCommentAlt, faComments, faFacebook, faInstagram, faMoneyBillWave, faNewspaper, faPlaystation, faSearch,
         faShippingFast, faShoppingCart, faHeart, faCartPlus, faBoxes, faTimes, faTimesCircle, faGoogle, faTwitter, faUsers, faWindowClose, faXbox, faCaretUp,
-        faCaretRight, faCaretLeft, faCaretDown, faBars, faSignInAlt, faSignOutAlt, faUser, faArrowAltCircleLeft, faEnvelope, faEye, faEyeSlash),
-      library.addIconPacks(far);
+        faCaretRight, faCaretLeft, faCaretDown, faBars, faSignInAlt, faSignOutAlt, faUser, faArrowAltCircleLeft, faEnvelope, faEye, faEyeSlash)
+      library.addIconPacks(far)
     }
 }

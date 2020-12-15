@@ -8,8 +8,6 @@ import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
 import { AngularFireAuth, AngularFireAuthModule } from '@angular/fire/auth';
 import { of, throwError } from 'rxjs';
-import { faYenSign } from '@fortawesome/free-solid-svg-icons';
-
 
 describe('AuthService', () => {
   let service: AuthService;
@@ -31,7 +29,12 @@ describe('AuthService', () => {
   it('loginWithGoogle should be called', () => {
     const spyFn = spyOn(service, 'loginWithGoogle').and.callThrough();
     spyFn();
-    // const secondSpyFn = spyOn(service, 'AngularFireAuth').and.returnValue(Promise.resolve({user: 'user'}))
+  })
+
+  it('Should call logout', async () => {
+    spyOn(service, 'logOut');
+    service.logOut();
+    expect(service.logOut).toHaveBeenCalled();
   })
 
   it('getUser should return user data', (done) => {
@@ -48,8 +51,8 @@ describe('AuthService', () => {
     httpClientSpy.get.and.returnValue(of({}));
     service.handleError()(() => {
       expect(service.handleError).toHaveBeenCalled()
-      done();
     })
+    done();
   })
 
   it('handleError should be called', () => {
@@ -101,7 +104,13 @@ describe('AuthService post method', () => {
     service = TestBed.inject(AuthService);
   });
 
-  it('Addfavorite should be called', () => {
-
+  it('Addfavorite should be called', (done) => {
+    const uid = '';
+    const videogame = '';
+    httpClientSpy.post.and.returnValue(of([]));
+    service.addFavourite(uid, videogame).subscribe(() => {
+      expect(httpClientSpy.post.calls.count()).toBe(1);
+    })
+    done();
   })
 });
