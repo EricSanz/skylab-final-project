@@ -19,7 +19,7 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { XboxComponent } from './xbox/xbox.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '', redirectTo: 'products', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'product/:videogameId', component: DetailComponent},
   { path: 'products', component: ListComponent},
@@ -37,7 +37,7 @@ const routes: Routes = [
   { path: 'information', component: InformationComponent },
   { path: 'dashboard', component: DashboardComponent},
   { path: 'dashboard/favourites', component: FavoritesComponent},
-  { path: '**', redirectTo: '/home', pathMatch: 'full'}
+  { path: '**', redirectTo: '/products', pathMatch: 'full'}
 ];
 
 @NgModule({

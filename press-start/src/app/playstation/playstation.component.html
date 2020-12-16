@@ -1,7 +1,4 @@
 <p class="list-title">PlayStation Videogames</p>
-<!-- <mat-carousel class="slider" timings="400ms" [autoplay]="true" interval='5000'>
-    <mat-carousel-slide class="slide" height="100%" *ngFor="let slide of videogame.photoSlider" [image]="slide" [hideOverlay]="false"></mat-carousel-slide>
-</mat-carousel> -->
 <div class="videogame__list-section" *ngIf="videogames$ | async as videogame">
     <div *ngFor="let videogame of videogame" class="videogame-section">
         <div *ngIf="videogame.playStation">

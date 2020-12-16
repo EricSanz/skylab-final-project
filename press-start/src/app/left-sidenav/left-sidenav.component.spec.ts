@@ -24,16 +24,8 @@ describe('LeftSidenavComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should call the openCloseLeftSidenav function', (done) => {
-    spyOn(component, 'openCloseLeftSidenav');
-    const fixture = TestBed.createComponent(LeftSidenavComponent);
-    const fixtureHeader = TestBed.createComponent(HeaderComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement;
-    const compiled2 = fixtureHeader.nativeElement;
-    const button = compiled2.getElementById('testButton')
-    const openClose = compiled.getElementById('toogleLeftSideNav')
-    button.click();
-    expect(openClose.style.transform).toBe('translateX(400px)')
+  it('should call the openCloseLeftSidenav and closeLeftSidenav functions', () => {
+      component.openCloseLeftSidenav()
+      component.closeLeftSidenav()
   });
 });

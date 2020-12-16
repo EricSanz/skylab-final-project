@@ -8,6 +8,7 @@ import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
 import { RouterModule } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
+import { ListComponent } from '../list/list.component';
 
 
 describe('RightSidenavComponent', () => {
@@ -19,7 +20,7 @@ describe('RightSidenavComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ RightSidenavComponent ],
       providers: [HttpClient, AuthService, {provide: AngularFireAuth}],
-      imports: [HttpClientTestingModule, RouterModule.forRoot([]), RouterTestingModule.withRoutes([]), AngularFireModule.initializeApp(environment.firebaseConfig), AngularFireAuthModule, AngularFireModule]
+      imports: [HttpClientTestingModule, RouterModule.forRoot([{path: 'products', component: ListComponent}]), RouterTestingModule.withRoutes([]), AngularFireModule.initializeApp(environment.firebaseConfig), AngularFireAuthModule, AngularFireModule]
     })
     .compileComponents();
   });
@@ -34,9 +35,10 @@ describe('RightSidenavComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should call toggleFieldTextType', () => {
-    spyOn(component, 'logout');
-    component.logout();
-    expect(component.logout).toHaveBeenCalled();
+  it('should call functions', () => {
+    component.login()
+    component.logout()
+    component.toggleFieldTextType()
+    component.toggleRightSidenav()
   })
 });

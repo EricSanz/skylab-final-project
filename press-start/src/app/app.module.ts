@@ -65,7 +65,7 @@ import { environment } from 'src/environments/environment';
     DetailComponent,
     ListComponent,
     DashboardComponent,
-    FavoritesComponent,
+    FavoritesComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { HttpClient } from '@angular/common/http';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { PlaystationComponent } from './playstation.component';
 
 describe('PlaystationComponent', () => {
@@ -8,7 +9,9 @@ describe('PlaystationComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PlaystationComponent ]
+      declarations: [ PlaystationComponent ],
+      providers: [HttpClient],
+      imports: [HttpClientTestingModule]
     })
     .compileComponents();
   });
