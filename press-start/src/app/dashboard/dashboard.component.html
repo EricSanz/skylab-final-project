@@ -1,22 +1,24 @@
 <div *ngIf="user$ | async as user" class="user__favorites-section">
     <div class="user__menu-container">
         <div class="upper__menu-container">
-            <img class="user__photo" [src]="user.photoURL">
+            <img class="user__photo" [src]="user.photoURL" alt="userphoto">
             <div class="upper__menu-welcome">
                 <p class="name__welcome">Hello {{user.displayName}} !</p>
                 <p class="press__welcome">Welcome to your Press Start</p>
             </div>
         </div>
         <div class="down__menu-options">
-            <li class="menu-options" *ngFor="let category of userCategories">
-                <p class="category-option">{{category.userCategory}}</p>
-                <mat-icon class="category-icon">keyboard_arrow_right</mat-icon>
-            </li>
+            <ul class="list__menu-options">
+                <li class="menu-options" *ngFor="let category of userCategories">
+                    <p class="category-option">{{category.userCategory}}</p>
+                    <mat-icon class="category-icon">keyboard_arrow_right</mat-icon>
+                </li>
+            </ul>
         </div>
     </div>
     <div class="favorites__products-container">
         <div class="favorites__title-container">
-            <p class="favorites__title"> All my favourites</p>
+            <p class="favorites__title"> My Wishlist</p>
             <fa-icon class="favorites-icon" [icon]="['far', 'heart']"></fa-icon>
         </div>
         <div class="products__flex-container">
@@ -30,7 +32,7 @@
                             <fa-icon class="buy-icon" [icon]="['fas', 'cart-plus']"></fa-icon>
                         </div>
                     </div>
-                    <img class="imagen" [src]="favourites.platform.cover[0]">
+                    <img class="imagen" [src]="favourites.platform.cover[0]" alt="cover-videogame">
                     <p class="product__name">{{favourites.name}}</p>
                     <div class="first__price-options">
                         <p class="stroke">{{favourites.price | currency: 'EUR'}}</p>
@@ -42,7 +44,7 @@
                         <div class="product__buy-notsale">
                             <fa-icon class="buy-icon-notsale" [icon]="['fas', 'cart-plus']"></fa-icon>
                         </div>
-                        <img class="imagen-notsale" [src]="favourites.platform.cover[0]">
+                        <img class="imagen-notsale" [src]="favourites.platform.cover[0]" alt="cover-videogame-two">
                         <p class="product__name-notsale">{{favourites.name}}</p>
                         <p class="original__price">{{favourites.price | currency: 'EUR'}}</p>
                     </div>

@@ -5,6 +5,7 @@ import { VideogameService } from '../videogame.service';
 import { Observable } from 'rxjs';
 import { AuthService } from '../auth.service';
 import { UserLoginStateService } from '../user-login-state.service';
+import { Location } from '@angular/common';
 
 
 @Component({
@@ -19,9 +20,6 @@ export class DetailComponent {
   }
   
   videogame$: Observable<Videogame> = this.videogameService.getVideogame(this.videogameId);
-  // videogame: any = this.videogameService.getVideogame(this.videogameId)
-  // .subscribe((info: Videogame) => {this.videogame = info })
-  // user$: Observable<User> = this.authService.getUser(this.authService.fireUser.user.displayName);
   user = this.userLoginState.getUser() !== null ? JSON.parse(localStorage.getItem('user')) : null;
 
 
@@ -37,6 +35,7 @@ export class DetailComponent {
     public videogameService: VideogameService,
     public authService: AuthService,
     public userLoginState: UserLoginStateService,
+    public location: Location
   ) {
     this.userLoginState.getValue().subscribe((value: boolean) => {
       this.flag = value
@@ -98,5 +97,9 @@ export class DetailComponent {
       this.isFavorite = !this.isFavorite;
       this.authService.addFavourite(uid, videogame._id).subscribe((value) => console.log(value));
     }
+  }
+
+  getBack(): void {
+    this.location.back();
   }
 }

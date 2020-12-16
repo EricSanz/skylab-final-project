@@ -44,7 +44,6 @@ export class AuthService {
 
   async loginWithGoogle() {
     this.fireUser = await this.afAuth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
-    // this.localStorage.user = JSON.stringify(this.fireUser.user);
     this.loginState.setUser(this.fireUser.user);
     this.modifyUser(this.fireUser.user).subscribe();
     return this.fireUser.user;
@@ -52,20 +51,6 @@ export class AuthService {
 
   async logOut(){
     await this.afAuth.signOut();
-    this.localStorage.remove(this.fireUser.user);
-    if (this.router.url === '/user') {
-      this.router.navigate(['/home'])
-    }  
-  }
-
-  async SignUp(email: string, password: string) {
-    this.fireUser.afAuth.auth.signInWithEmailAndPassword(email, password);
-    this.modifyUser(this.fireUser.user).subscribe();
-  }
-
-  SignIn(email: string, password: string) {
-    this.fireUser.afAuth.auth.createUserWithEmailAndPassword(email, password)
-    this.modifyUser(this.fireUser.user).subscribe();
   }
 
   getUser (name: string): Observable<User> {
@@ -90,8 +75,8 @@ export class AuthService {
     const url = `${this.userUrl}`;
     return this.http.post<User>(url, {uid, videogame})
     .pipe(
-      tap((value) => console.log('added to favourites', value)),
-      catchError(this.handleError('error adding favourite', []))
+      tap((value) => console.log('added to favorites', value)),
+      catchError(this.handleError('error adding favorite', []))
     );
   }
 

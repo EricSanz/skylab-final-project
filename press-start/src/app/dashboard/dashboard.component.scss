@@ -7,6 +7,7 @@
     display: inline-flex;
     .user__menu-container {
         height: 100vh;
+        width: 380px;
         display: flex;
         flex-direction: column;
         .upper__menu-container {
@@ -39,29 +40,35 @@
             margin: 5px;
             background: #3bc8e0;
             height: 100vh;
-            .menu-options {
-                text-decoration: none;
-                height: 70px;
-                padding-left: 50px;
-                padding-right: 50px;
-                padding-bottom: 5px;
-                display: flex;
-                width: 290px;
-                align-items: center;
-                justify-content: space-between;
-                border-bottom: 2px solid white;
-                .category-option {
-                    color: #161616;  
-                    font-size: 20px;
-                    font-weight: bold;
-                    align-self: center;
-                    margin-top: 20px;
-                }
-                .category-icon {
+            position: relative;
+            .list__menu-options {
+                width: 100%;
+                position: absolute;
+                .menu-options {
+                    text-decoration: none;
+                    height: 65px;
+                    margin-left: -40px;
+                    padding-right: 80px;
+                    padding-bottom: 5px;
                     display: flex;
-                    color: #161616;
-                    font-size: 35px;
-                    font-weight: bold;
+                    width: 290px;
+                    align-items: center;
+                    justify-content: space-between;
+                    border-bottom: 2px solid white;
+                    .category-option {
+                        color: #161616;  
+                        font-size: 20px;
+                        font-weight: bold;
+                        align-self: center;
+                        margin-top: 20px;
+                        padding-left: 40px;
+                    }
+                    .category-icon {
+                        display: flex;
+                        color: #161616;
+                        font-size: 35px;
+                        font-weight: bold;
+                    }
                 }
             }
             .menu-options:hover {
@@ -71,7 +78,7 @@
         }
     }
     .favorites__products-container {
-        width: 944px;
+        width: 950px;
         background: white;
         margin-left: 15px;
         border-top-left-radius: 20px;

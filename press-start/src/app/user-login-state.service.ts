@@ -32,7 +32,7 @@ export class UserLoginStateService {
    removeUser(): void {
      localStorage.removeItem('user')
      this.loggedStatus.next(false)
-     this.router.navigate(['home'])
+     this.router.navigate(['products'])
    }
 
    setValue(currentStatus: boolean): void {

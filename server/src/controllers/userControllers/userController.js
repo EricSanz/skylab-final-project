@@ -1,8 +1,3 @@
-/* eslint-disable max-len */
-/* eslint-disable no-console */
-/* eslint-disable no-param-reassign */
-/* eslint-disable no-underscore-dangle */
-
 function userController(User) {
   function getMethod(req, res) {
     const query = { displayName: req.query.displayName };
@@ -21,16 +16,11 @@ function userController(User) {
 
   function postMethod({ body }, res) {
     const userId = body.uid;
-    // console.log(body);
     User.findOne({ uid: userId }, (errorFindUser, user) => {
       if (user) {
-        console.log(user.favorites);
-        // console.log(user);
         const findVideogame = user.favorites.some(
           (videogame) => String(videogame) === body.videogame,
         );
-        console.log(typeof body.videogame);
-        console.log(body.videogame);
         if (findVideogame) {
           const videogameFilter = user.favorites.filter((videogame) => String(videogame) !== body.videogame);
           user.favorites = videogameFilter;
